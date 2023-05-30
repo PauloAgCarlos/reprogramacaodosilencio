@@ -4,82 +4,145 @@ namespace App\Http\Controllers;
 
 use App\Models\Pacientes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use File;
+use Illuminate\Support\Facades\Auth;
+use Alert;
 
 class PacientesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
+        $user = Auth::user();
+
+        $pacientes = Pacientes::all();
+
+        return $pacientes;
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
+        $user = Auth::user();
+
+        return 'registar paciente';
+        // return view('conteudos.pacientes.app_registar_paciente', compact('user','fornecedores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+
         //
+        $user = Auth::user();
+
+        $paciente = new Pacientes;
+        $paciente->nome = $request->nome;
+        $paciente->data_nascimento = $request->data_nascimento;
+        $paciente->email = $request->email;
+        $paciente->cep = $request->cep;
+
+        // Verificando se a foto é válida
+        if ($request->foto) {
+            $foto = $request->foto;
+            $extensaoI =  $foto->getClientOriginalExtension();
+            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
+                return back()->with('erro', 'Erro: foto inválida');
+            }
+        }
+
+         $paciente->save();
+        // Guardar a foto na base de dados
+
+         if ($request->foto) {
+            File::move($foto, public_path().'/images/pacientes/imag_'.$paciente->id.'.'.$extensaoI);
+            $paciente->foto = '/images/pacientes/imag_'.$paciente->id.'.'.$extensaoI;
+            $paciente->save();
+        }
+
+        // redirecionar para a página inicial
+        Alert::toast('paciente Registado Com Sucesso', 'success');
+
+        return redirect('/pacientes');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pacientes  $pacientes
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Pacientes $pacientes)
+
+
+    public function show($id)
     {
-        //
+        $user = Auth::user();
+        $paciente = Pacientes::find($id);
+
+        return $paciente;
+
+        // return view('conteudos.pacientes.app_visualizar_paciente', compact('paciente'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pacientes  $pacientes
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pacientes $pacientes)
+
+    public function edit($id)
     {
         //
+        $paciente = Pacientes::find($id);
+
+
+        return $paciente;
+        // return view('conteudos.pacientes.app_editar_paciente', compact('organizacoes','paciente'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pacientes  $pacientes
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Pacientes $pacientes)
+        public function update(Request $request, $id)
     {
         //
+
+        $paciente = Pacientes::find($id);
+        $paciente->nome = $request->nome;
+        $paciente->data_nascimento = $request->data_nascimento;
+        $paciente->email = $request->email;
+        $paciente->cep = $request->cep;
+
+        // Verificando se a foto é válida
+        if ($request->foto) {
+            $foto = $request->foto;
+            $extensaoI =  $foto->getClientOriginalExtension();
+            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
+                return back()->with('erro', 'Erro: foto inválida');
+            }
+        }
+
+         $paciente->save();
+        // Guardar a foto na base de dados
+
+         if ($request->foto) {
+            File::move($foto, public_path().'/images/pacientes/imag_'.$paciente->id.'.'.$extensaoI);
+            $paciente->foto = '/images/pacientes/imag_'.$paciente->id.'.'.$extensaoI;
+            $paciente->save();
+        }
+
+
+        $paciente->save();
+
+        // redirecionar para a página inicial
+        Alert::toast('Registo Actualizado Com Sucesso', 'success');
+
+        return redirect('/pacientes');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pacientes  $pacientes
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Pacientes $pacientes)
+
+    public function destroy($id)
     {
         //
+        Pacientes::destroy($id);
+        Alert::toast('Registo Eliminado Com Sucesso', 'success');
+
+        return redirect('/pacientes');
+    }
+
+    public function pesquisar()
+    {
+        //
+        return 'A página está a ser trabalhada...';
+
+        return redirect('/pacientes');
     }
 }

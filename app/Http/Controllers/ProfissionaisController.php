@@ -85,7 +85,6 @@ class ProfissionaisController extends Controller
     public function edit($id)
     {
         //
-        $organizacoes = Organizacoes::all();
         $profissional = Profissionais::find($id);
 
 

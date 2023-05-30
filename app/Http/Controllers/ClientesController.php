@@ -18,7 +18,7 @@ class ClientesController extends Controller
         //
         $user = Auth::user();
 
-        $clientes = clientes::all();
+        $clientes = Clientes::all();
 
         return $clientes;
 
@@ -75,7 +75,7 @@ class ClientesController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $cliente = clientes::find($id);
+        $cliente = Clientes::find($id);
 
         return $cliente;
 
@@ -86,8 +86,7 @@ class ClientesController extends Controller
     public function edit($id)
     {
         //
-        $organizacoes = Organizacoes::all();
-        $cliente = clientes::find($id);
+        $cliente = Clientes::find($id);
 
 
         return $cliente;
@@ -135,7 +134,7 @@ class ClientesController extends Controller
     public function destroy($id)
     {
         //
-        clientes::destroy($id);
+        Clientes::destroy($id);
         Alert::toast('Registo Eliminado Com Sucesso', 'success');
 
         return redirect('/clientes');
