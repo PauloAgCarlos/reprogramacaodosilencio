@@ -9,7 +9,7 @@
       </span>
       <span class="smini-hidden">
         <!-- <img style="width: 50px; height: 50px;" src="assets/media/photos/amis.png">  -->
-        <img style="width: 90px; height: 50px;" src="/assets/media/photos/amis.png">
+        <img style="width: 100%; height: 100px;" src="/images/logo1.png">
         <!-- <img style="width: 90px; height: 50px;" src="/assets/media/photos/branco1.jpeg"> -->
         <br>
 
@@ -20,17 +20,17 @@
 
     <!-- Options -->
     <div>
-
+<!-- 
       <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#sidebar-style-toggler" data-class="fa-toggle-off fa-toggle-on" onclick="Dashmix.layout('sidebar_style_toggle');Dashmix.layout('header_style_toggle');">
         <i class="fa fa-toggle-off" id="sidebar-style-toggler"></i>
-      </button>
+      </button> -->
       <!-- END Toggle Sidebar Style -->
 
       <!-- Dark Mode -->
       <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-      <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#dark-mode-toggler" data-class="far fa" onclick="Dashmix.layout('dark_mode_toggle');">
+      <!-- <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#dark-mode-toggler" data-class="far fa" onclick="Dashmix.layout('dark_mode_toggle');">
         <i class="far fa-moon" id="dark-mode-toggler"></i>
-      </button>
+      </button> -->
       <!-- END Dark Mode -->
 
       <!-- Close Sidebar, Visible only on mobile screens -->
@@ -65,74 +65,26 @@
         <ul class="nav-main-submenu">
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Secretaria</span>
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Clientes</span>
             </a>
             <ul class="nav-main-submenu">
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_organizacao')
               <li class="nav-main-item">
-                <a class="nav-main-link" href="/organizacoes">
-                  <span class="nav-main-link-name">Organizações</span>
+                <a class="nav-main-link" href="/clientes">
+                  <span class="nav-main-link-name">Listar Clientes</span>
                 </a>
               </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_projeto')
               <li class="nav-main-item">
-                <a class="nav-main-link" href="/projetos">
-                  <span class="nav-main-link-name">Projetos</span>
+                <a class="nav-main-link" href="/registar_cliente">
+                  <span class="nav-main-link-name">Cadastrar Cliente</span>
                 </a>
               </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_turma')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="/turmas">
-                  <span class="nav-main-link-name">Turmas</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_categoria')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="/categorias">
-                  <span class="nav-main-link-name">Categorias</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_apresentacao')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="/apresentacoes">
-                  <span class="nav-main-link-name">Apresentações</span>
-                </a>
-              </li>
-              @endcan
-
-              
-              <!-- <li class="nav-main-item">
-                        <a class="nav-main-link" href="/visitantes">
-                          <span class="nav-main-link-name">Visitantes</span>
-                        </a>
-                      </li> -->
-              
-              
-
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_funcionario')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="/funcionarios">
-                  <span class="nav-main-link-name">Prestadores</span>
-                </a>
-              </li>
-              @endcan
             </ul>
           </li>
           {{-- só quem tem permissão para visualizar esta página --}}
 
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Acadêmico</span>
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Profissionais</span>
             </a>
             <ul class="nav-main-submenu">
             {{-- só quem tem permissão para visualizar esta página --}}
@@ -192,7 +144,25 @@
 
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Pedagógico</span>
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Pacientes</span>
+            </a>
+            <ul class="nav-main-submenu">
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/pacientes">
+                  <span class="nav-main-link-name">Listar Pacientes</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/registar_paciente">
+                  <span class="nav-main-link-name">Cadastrar Paciente</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-main-item">
+            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Usuários</span>
             </a>
             <ul class="nav-main-submenu">
               <!-- <li class="nav-main-item">

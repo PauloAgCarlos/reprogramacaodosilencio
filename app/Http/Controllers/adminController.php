@@ -45,7 +45,7 @@ class adminController extends Controller
     
         $total_usuarios = User::all()->count();
 
-        return view('dashboard');
+        return view('dashboard', compact('user'));
          
     }
 

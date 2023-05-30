@@ -20,7 +20,7 @@ class ClientesController extends Controller
 
         $clientes = Clientes::all();
 
-        return $clientes;
+        return view('conteudos.clientes.app_clientes', compact('user','clientes'));
 
     }
 
@@ -79,20 +79,18 @@ class ClientesController extends Controller
         $user = Auth::user();
         $cliente = Clientes::find($id);
 
-        return $cliente;
 
-        // return view('conteudos.clientes.app_visualizar_cliente', compact('cliente'));
+        return view('conteudos.clientes.app_visualizar_cliente', compact('cliente','user'));
     }
 
 
     public function edit($id)
     {
         //
+        $user = Auth::user();
         $cliente = Clientes::find($id);
 
-
-        return $cliente;
-        // return view('conteudos.clientes.app_editar_cliente', compact('organizacoes','cliente'));
+        return view('conteudos.clientes.app_editar_cliente', compact('user','cliente'));
     }
 
         public function update(Request $request, $id)

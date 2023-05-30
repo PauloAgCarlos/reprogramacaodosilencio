@@ -28,6 +28,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+  <link rel="stylesheet" id="css-main" href="/css/estilo2.css">
 
   <!-- Icons -->
   <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
@@ -201,41 +202,26 @@
       </div>
       <!-- END Header Search -->
 
-
-
-      <!-- Header Loader -->
-      <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-      <div id="page-header-loader" class="overlay-header bg-header-dark">
-        <div class="bg-white-10">
-          <div class="content-header">
-            <div class="w-100 text-center">
-              <i class="fa fa-fw fa-sun fa-spin text-white"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END Header Loader -->
+ 
     </header>
     <!-- END Header -->
 
+ 
 
+      <!-- Main Container -->
+      <main id="main-container">
+        <!-- Page Content -->
+        <div class="content">
 
-    <div class="content">
-        @if(isset($notificacoes))
-        @if($notificacoes->count() > 0)
-        <br>
-        <center> <div class="alert alert-danger" role="alert">
-                Você tem novas notificações. Confira urgentemente!
-            </div> </center>
-        @endif
-        @endif
-      @yield('conteudo')
+        @yield('conteudo')
+        
+        </div>
+        <!-- END Page Content -->
+      </main>
+      <!-- END Main Container -->
 
+ 
 
-
-    </div>
-
-<!-- END Main Container -->
 
     @include('layouts.app_rodape')
   </div>

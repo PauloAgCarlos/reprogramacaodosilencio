@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index.html', 'App\Http\Controllers\adminController@dashboard') ;
+
 Route::get('/dashboard', 'App\Http\Controllers\adminController@dashboard')->middleware('auth')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\adminController@logout')->middleware('auth');
 
