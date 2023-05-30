@@ -4,82 +4,147 @@ namespace App\Http\Controllers;
 
 use App\Models\Profissionais;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use File;
+use Illuminate\Support\Facades\Auth;
+use Alert;
+
 
 class ProfissionaisController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
+        $user = Auth::user();
+
+        $profissionais = Profissionais::all();
+
+        return $profissionais;
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
+        $user = Auth::user();
+
+        return 'registar profissional';
+        // return view('conteudos.profissionais.app_registar_profissional', compact('user','fornecedores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+
         //
+        $user = Auth::user();
+
+        $profissional = new Profissionais;
+        $profissional->nome = $request->nome;
+        $profissional->data_nascimento = $request->data_nascimento;
+        $profissional->email = $request->email;
+        $profissional->cep = $request->cep;
+
+        // Verificando se a foto é válida
+        if ($request->foto) {
+            $foto = $request->foto;
+            $extensaoI =  $foto->getClientOriginalExtension();
+            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
+                return back()->with('erro', 'Erro: foto inválida');
+            }
+        }
+
+         $profissional->save();
+        // Guardar a foto na base de dados
+
+         if ($request->foto) {
+            File::move($foto, public_path().'/images/profissionais/imag_'.$profissional->id.'.'.$extensaoI);
+            $profissional->foto = '/images/profissionais/imag_'.$profissional->id.'.'.$extensaoI;
+            $profissional->save();
+        }
+
+        // redirecionar para a página inicial
+        Alert::toast('profissional Registado Com Sucesso', 'success');
+
+        return redirect('/profissionais');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profissionais  $profissionais
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Profissionais $profissionais)
+
+
+    public function show($id)
     {
-        //
+        $user = Auth::user();
+        $profissional = Profissionais::find($id);
+
+        return $profissional;
+
+        // return view('conteudos.profissionais.app_visualizar_profissional', compact('profissional'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profissionais  $profissionais
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Profissionais $profissionais)
+
+    public function edit($id)
     {
         //
+        $organizacoes = Organizacoes::all();
+        $profissional = Profissionais::find($id);
+
+
+        return $profissional;
+        // return view('conteudos.profissionais.app_editar_profissional', compact('organizacoes','profissional'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profissionais  $profissionais
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Profissionais $profissionais)
+        public function update(Request $request, $id)
     {
         //
+
+        $profissional = Profissionais::find($id);
+        $profissional->nome = $request->nome;
+        $profissional->data_nascimento = $request->data_nascimento;
+        $profissional->email = $request->email;
+        $profissional->cep = $request->cep;
+
+        // Verificando se a foto é válida
+        if ($request->foto) {
+            $foto = $request->foto;
+            $extensaoI =  $foto->getClientOriginalExtension();
+            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
+                return back()->with('erro', 'Erro: foto inválida');
+            }
+        }
+
+         $profissional->save();
+        // Guardar a foto na base de dados
+
+         if ($request->foto) {
+            File::move($foto, public_path().'/images/profissionais/imag_'.$profissional->id.'.'.$extensaoI);
+            $profissional->foto = '/images/profissionais/imag_'.$profissional->id.'.'.$extensaoI;
+            $profissional->save();
+        }
+
+
+        $profissional->save();
+
+        // redirecionar para a página inicial
+        Alert::toast('Registo Actualizado Com Sucesso', 'success');
+
+        return redirect('/profissionais');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profissionais  $profissionais
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Profissionais $profissionais)
+
+    public function destroy($id)
     {
         //
+        Profissionais::destroy($id);
+        Alert::toast('Registo Eliminado Com Sucesso', 'success');
+
+        return redirect('/profissionais');
+    }
+
+    public function pesquisar()
+    {
+        //
+        return 'A página está a ser trabalhada...';
+
+        return redirect('/profissionais');
     }
 }

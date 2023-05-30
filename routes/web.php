@@ -29,6 +29,14 @@ Route::get('/eliminar_cliente/{id}', 'App\Http\Controllers\clientesController@de
 Route::post('/actualizar_cliente/{id}', 'App\Http\Controllers\clientesController@update');
 Route::post('/salvar_cliente', 'App\Http\Controllers\clientesController@store');
 
+Route::get('/profissionais', 'App\Http\Controllers\profissionaisController@index');
+Route::get('/registar_profissional', 'App\Http\Controllers\profissionaisController@create');
+Route::get('/editar_profissional/{id}', 'App\Http\Controllers\profissionaisController@edit');
+Route::get('/visualizar_profissional/{id}', 'App\Http\Controllers\profissionaisController@show');
+Route::get('/eliminar_profissional/{id}', 'App\Http\Controllers\profissionaisController@destroy');
+Route::post('/actualizar_profissional/{id}', 'App\Http\Controllers\profissionaisController@update');
+Route::post('/salvar_profissional', 'App\Http\Controllers\profissionaisController@store');
+
 
  
 require __DIR__.'/auth.php';
