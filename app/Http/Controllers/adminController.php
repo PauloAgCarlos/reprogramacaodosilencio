@@ -144,7 +144,7 @@ class adminController extends Controller
                     $roles = new permissions_roles();
                     $roles->permission_id = $permissao_id;
                     $roles->role_id = $request->role_id;
-
+                    
                     $roles->save();
                 }
             }
@@ -162,9 +162,6 @@ class adminController extends Controller
                     }
                 }
             }
-
-
-
         }
         else{
 
@@ -181,7 +178,6 @@ class adminController extends Controller
                         permissions_roles::destroy($localizar_id_ignorado->id);
 
                     }
-
             }
         }
 
@@ -227,8 +223,6 @@ class adminController extends Controller
                 }
             }
 
-
-
         }
         else{
 
@@ -243,9 +237,7 @@ class adminController extends Controller
                     if ($localizar_id_ignorado) {
 
                         permissions_roles::destroy($localizar_id_ignorado->id);
-
                     }
-
             }
         }
 

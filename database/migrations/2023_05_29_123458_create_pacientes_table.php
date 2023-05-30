@@ -14,7 +14,13 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nome');
+            $table->string('data_nascimento');
+            $table->string('email');
+            $table->string('cep');
+            $table->string('foto')->default('/images/sem-foto.jpg');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

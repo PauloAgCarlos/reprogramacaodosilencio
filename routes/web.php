@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,6 +19,16 @@ Route::post('/actualizar_roles_users','App\Http\Controllers\adminController@actu
 Route::post('/salvar_permissions_roles','App\Http\Controllers\adminController@salvar_permissions_roles')->middleware('auth');
 Route::get('/login', 'App\Http\Controllers\adminController@login')->middleware('auth');
 // Route::get('/novo_usuario', 'App\Http\Controllers\adminController@novo_usuario')->middleware('auth');
+
+
+Route::get('/clientes', 'App\Http\Controllers\clientesController@index');
+Route::get('/registar_cliente', 'App\Http\Controllers\clientesController@create');
+Route::get('/editar_cliente/{id}', 'App\Http\Controllers\clientesController@edit');
+Route::get('/visualizar_cliente/{id}', 'App\Http\Controllers\clientesController@show');
+Route::get('/eliminar_cliente/{id}', 'App\Http\Controllers\clientesController@destroy');
+Route::post('/actualizar_cliente/{id}', 'App\Http\Controllers\clientesController@update');
+Route::post('/salvar_cliente', 'App\Http\Controllers\clientesController@store');
+
 
  
 require __DIR__.'/auth.php';
