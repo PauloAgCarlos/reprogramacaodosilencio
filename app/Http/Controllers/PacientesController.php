@@ -43,6 +43,7 @@ class PacientesController extends Controller
         $paciente->data_nascimento = $request->data_nascimento;
         $paciente->email = $request->email;
         $paciente->cep = $request->cep;
+        
 
         // Verificando se a foto é válida
         if ($request->foto) {

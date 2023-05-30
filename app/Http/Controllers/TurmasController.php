@@ -4,82 +4,107 @@ namespace App\Http\Controllers;
 
 use App\Models\Turmas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use File;
+use Illuminate\Support\Facades\Auth;
+use Alert;
 
 class TurmasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
+        $user = Auth::user();
+
+        $turmas = Turmas::all();
+
+        return $turmas;
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
+        $user = Auth::user();
+
+        return 'registar turma';
+        // return view('conteudos.turmas.app_registar_turma', compact('user','fornecedores'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+
         //
+        $user = Auth::user();
+
+        $turma = new Turmas;
+        $turma->nome = $request->nome;
+        $turma->email = $request->email;
+        $turma->cep = $request->cep;
+
+        $turma->save();
+ 
+        // redirecionar para a página inicial
+        Alert::toast('turma Registado Com Sucesso', 'success');
+
+        return redirect('/turmas');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Turmas  $turmas
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Turmas $turmas)
+
+
+    public function show($id)
     {
-        //
+        $user = Auth::user();
+        $turma = Turmas::find($id);
+
+        return $turma;
+
+        // return view('conteudos.turmas.app_visualizar_turma', compact('turma'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Turmas  $turmas
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Turmas $turmas)
+
+    public function edit($id)
     {
         //
+        $turma = Turmas::find($id);
+
+
+        return $turma;
+        // return view('conteudos.turmas.app_editar_turma', compact('organizacoes','turma'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Turmas  $turmas
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Turmas $turmas)
+    public function update(Request $request, $id)
     {
         //
+        $turma = Turmas::find($id);
+        $turma->nome = $request->nome;
+        $turma->email = $request->email;
+        $turma->cep = $request->cep;
+
+        $turma->save();
+
+        // redirecionar para a página inicial
+        Alert::toast('Registo Actualizado Com Sucesso', 'success');
+
+        return redirect('/turmas');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Turmas  $turmas
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Turmas $turmas)
+
+    public function destroy($id)
     {
         //
+        Turmas::destroy($id);
+        Alert::toast('Registo Eliminado Com Sucesso', 'success');
+
+        return redirect('/turmas');
+    }
+
+    public function pesquisar()
+    {
+        //
+        return 'A página está a ser trabalhada...';
+
+        return redirect('/turmas');
     }
 }

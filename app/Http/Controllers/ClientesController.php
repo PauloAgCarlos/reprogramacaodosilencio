@@ -46,6 +46,8 @@ class ClientesController extends Controller
         $cliente->email = $request->email;
         $cliente->cep = $request->cep;
 
+        
+
         // Verificando se a foto é válida
         if ($request->foto) {
             $foto = $request->foto;
