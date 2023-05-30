@@ -30,8 +30,8 @@ class ClientesController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar cliente';
-        // return view('conteudos.clientes.app_registar_cliente', compact('user','fornecedores'));
+        // return 'registar cliente';
+        return view('conteudos.clientes.app_registar_cliente', compact('user'));
     }
 
     public function store(Request $request)
