@@ -11,7 +11,7 @@ use Alert;
 
 
 
-class ClientesController extends Controller
+class clientesController extends Controller
 {
     public function index()
     {

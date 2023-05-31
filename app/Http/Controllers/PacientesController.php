@@ -9,7 +9,7 @@ use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
 
-class PacientesController extends Controller
+class pacientesController extends Controller
 {
     public function index()
     {
