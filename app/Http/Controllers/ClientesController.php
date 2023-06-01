@@ -44,28 +44,11 @@ class clientesController extends Controller
         $cliente->nome = $request->nome;
         $cliente->data_nascimento = $request->data_nascimento;
         $cliente->email = $request->email;
-        $cliente->cep = $request->cep;
 
-        
 
-        // Verificando se a foto é válida
-        if ($request->foto) {
-            $foto = $request->foto;
-            $extensaoI =  $foto->getClientOriginalExtension();
-            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
-                return back()->with('erro', 'Erro: foto inválida');
-            }
-        }
+        $cliente->save();
 
-         $cliente->save();
-        // Guardar a foto na base de dados
-
-         if ($request->foto) {
-            File::move($foto, public_path().'/images/clientes/imag_'.$cliente->id.'.'.$extensaoI);
-            $cliente->foto = '/images/clientes/imag_'.$cliente->id.'.'.$extensaoI;
-            $cliente->save();
-        }
-
+         
         // redirecionar para a página inicial
         Alert::toast('cliente Registado Com Sucesso', 'success');
 
@@ -101,26 +84,7 @@ class clientesController extends Controller
         $cliente->nome = $request->nome;
         $cliente->data_nascimento = $request->data_nascimento;
         $cliente->email = $request->email;
-        $cliente->cep = $request->cep;
-
-        // Verificando se a foto é válida
-        if ($request->foto) {
-            $foto = $request->foto;
-            $extensaoI =  $foto->getClientOriginalExtension();
-            if ($extensaoI!= 'jpg' && $extensaoI!= 'png') {
-                return back()->with('erro', 'Erro: foto inválida');
-            }
-        }
-
-         $cliente->save();
-        // Guardar a foto na base de dados
-
-         if ($request->foto) {
-            File::move($foto, public_path().'/images/clientes/imag_'.$cliente->id.'.'.$extensaoI);
-            $cliente->foto = '/images/clientes/imag_'.$cliente->id.'.'.$extensaoI;
-            $cliente->save();
-        }
-
+ 
 
         $cliente->save();
 
