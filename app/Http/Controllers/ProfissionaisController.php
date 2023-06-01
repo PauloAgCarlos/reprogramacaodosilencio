@@ -19,7 +19,8 @@ class ProfissionaisController extends Controller
 
         $profissionais = Profissionais::all();
 
-        return $profissionais;
+        // return $profissionais;
+        return view('conteudos.profissionais.app_profissionais', compact('user', 'profissionais'));
 
     }
 
@@ -29,8 +30,8 @@ class ProfissionaisController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar profissional';
-        // return view('conteudos.profissionais.app_registar_profissional', compact('user','fornecedores'));
+        // return 'registar profissional';
+        return view('conteudos.profissionais.app_registar_profissionais', compact('user'));
     }
 
     public function store(Request $request)
@@ -76,20 +77,19 @@ class ProfissionaisController extends Controller
         $user = Auth::user();
         $profissional = Profissionais::find($id);
 
-        return $profissional;
+        // return $profissional;
 
-        // return view('conteudos.profissionais.app_visualizar_profissional', compact('profissional'));
+        return view('conteudos.profissionais.app_visualizar_profissional', compact('profissional', 'user'));
     }
 
 
     public function edit($id)
     {
         //
+        $user = Auth::user();
         $profissional = Profissionais::find($id);
 
-
-        return $profissional;
-        // return view('conteudos.profissionais.app_editar_profissional', compact('organizacoes','profissional'));
+        return view('conteudos.profissionais.app_editar_profissional', compact('user','profissional'));
     }
 
         public function update(Request $request, $id)

@@ -87,6 +87,18 @@
               <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Profissionais</span>
             </a>
             <ul class="nav-main-submenu">
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/profissionais">
+                  <span class="nav-main-link-name">Listar Profissionais</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/registar_profissional">
+                  <span class="nav-main-link-name">Cadastrar Profissional</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav-main-submenu">
             {{-- só quem tem permissão para visualizar esta página --}}
               @can('pode_visualizar_matricula')
               <li class="nav-main-item">
@@ -164,6 +176,18 @@
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
               <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Usuários</span>
             </a>
+            <ul class="nav-main-submenu">
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/usuarios">
+                  <span class="nav-main-link-name">Listar Usuários</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/registar_usuario">
+                  <span class="nav-main-link-name">Cadastrar Usuários</span>
+                </a>
+              </li>
+            </ul>
             <ul class="nav-main-submenu">
               <!-- <li class="nav-main-item">
                 <a class="nav-main-link" href="/modulos">
