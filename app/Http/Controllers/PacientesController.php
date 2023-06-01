@@ -18,7 +18,7 @@ class pacientesController extends Controller
 
         $pacientes = Pacientes::all();
 
-        return $pacientes;
+        return view('conteudos.pacientes.app_paciente', compact('user', 'pacientes'));
 
     }
 
@@ -28,8 +28,8 @@ class pacientesController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar paciente';
-        // return view('conteudos.pacientes.app_registar_paciente', compact('user','fornecedores'));
+        // return 'registar paciente';
+        return view('conteudos.pacientes.app_registar_paciente', compact('user'));
     }
 
     public function store(Request $request)
@@ -76,20 +76,17 @@ class pacientesController extends Controller
         $user = Auth::user();
         $paciente = Pacientes::find($id);
 
-        return $paciente;
-
-        // return view('conteudos.pacientes.app_visualizar_paciente', compact('paciente'));
+        return view('conteudos.pacientes.app_visualizar_paciente', compact('user','paciente'));
     }
 
 
     public function edit($id)
     {
         //
+        $user = Auth::user();
         $paciente = Pacientes::find($id);
 
-
-        return $paciente;
-        // return view('conteudos.pacientes.app_editar_paciente', compact('organizacoes','paciente'));
+        return view('conteudos.pacientes.app_editar_paciente', compact('user','paciente'));
     }
 
         public function update(Request $request, $id)

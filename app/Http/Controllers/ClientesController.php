@@ -30,7 +30,6 @@ class clientesController extends Controller
         //
         $user = Auth::user();
 
-        // return 'registar cliente';
         return view('conteudos.clientes.app_registar_cliente', compact('user'));
     }
 
