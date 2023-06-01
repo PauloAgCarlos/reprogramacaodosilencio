@@ -85,7 +85,7 @@
                   <a class="link-fx fw-bold fs-1" href="index.html">
                     <span class="text-dark">Programação</span><span class="text-primary">Silenciosa</span>
                   </a>
-                  <p class="text-uppercase fw-bold fs-sm text-muted">Sign In</p>
+                  <p class="text-uppercase fw-bold fs-sm text-muted">Iniciar Sessão</p>
                 </div>
                 <!-- END Header -->
                 <div class="row g-0 justify-content-center">
@@ -113,7 +113,7 @@
 
                       <div class="mb-4">
                         <x-button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
-                            <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Sign In
+                            <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Iniciar Sessão
                         </x-button>
                         <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                               <!-- @if (Route::has('password.request'))
@@ -122,7 +122,7 @@
                                   </a>
                               @endif        -->
                           <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="/register">
-                            <i class="fa fa-plus opacity-50 me-1"></i> New Account
+                            <i class="fa fa-plus opacity-50 me-1"></i> Criar Nova Conta
                           </a>
                         </p>
                       </div>
@@ -138,7 +138,7 @@
             <div class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
               <div class="p-3">
                 <p class="display-4 fw-bold text-white mb-3">
-                  Welcome to the future
+                  Bem Vindo ao futuro
                 </p>
                 <p class="fs-lg fw-semibold text-white-75 mb-0">
                   Copyright &copy; <span data-toggle="year-copy"></span>
