@@ -9,7 +9,7 @@ use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
 
-class TurmasController extends Controller
+class turmasController extends Controller
 {
     public function index()
     {

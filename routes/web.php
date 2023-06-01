@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/index.html', 'App\Http\Controllers\adminController@dashboard') ;
+Route::get('/', 'App\Http\Controllers\adminController@dashboard')->middleware('auth');
+Route::get('/index.html', 'App\Http\Controllers\adminController@dashboard')->middleware('auth');
 
 Route::get('/dashboard', 'App\Http\Controllers\adminController@dashboard')->middleware('auth')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\adminController@logout')->middleware('auth');
@@ -55,6 +56,16 @@ Route::get('/visualizar_turma/{id}', 'App\Http\Controllers\turmasController@show
 Route::get('/eliminar_turma/{id}', 'App\Http\Controllers\turmasController@destroy')->middleware('auth');
 Route::post('/actualizar_turma/{id}', 'App\Http\Controllers\turmasController@update')->middleware('auth');
 Route::post('/salvar_turma', 'App\Http\Controllers\turmasController@store')->middleware('auth');
+
+
+
+Route::get('/usuarios', 'App\Http\Controllers\usuariosController@index')->middleware('auth');
+Route::get('/registar_usuario', 'App\Http\Controllers\usuariosController@create')->middleware('auth');
+Route::get('/editar_usuario/{id}', 'App\Http\Controllers\usuariosController@edit')->middleware('auth');
+Route::get('/visualizar_usuario/{id}', 'App\Http\Controllers\usuariosController@show')->middleware('auth');
+Route::get('/eliminar_usuario/{id}', 'App\Http\Controllers\usuariosController@destroy')->middleware('auth');
+Route::post('/actualizar_usuario/{id}', 'App\Http\Controllers\usuariosController@update')->middleware('auth');
+Route::post('/salvar_usuario', 'App\Http\Controllers\usuariosController@store')->middleware('auth');
 
  
 require __DIR__.'/auth.php';

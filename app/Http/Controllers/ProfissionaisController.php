@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Alert;
 
 
-class ProfissionaisController extends Controller
+class profissionaisController extends Controller
 {
     public function index()
     {

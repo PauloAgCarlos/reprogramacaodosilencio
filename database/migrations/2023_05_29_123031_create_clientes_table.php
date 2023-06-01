@@ -14,9 +14,6 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('data_nascimento');
             $table->string('email');
-            $table->string('cep');
-            $table->string('foto')->default('/images/sem-foto.jpg');
-            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
