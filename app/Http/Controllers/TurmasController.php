@@ -42,6 +42,8 @@ class turmasController extends Controller
         $turma->nome = $request->nome;
         $turma->email = $request->email;
         $turma->cep = $request->cep;
+        $turma->data_inicio = $request->data_inicio;
+        $turma->tipo = $request->tipo;
 
         $turma->save();
  
@@ -81,6 +83,8 @@ class turmasController extends Controller
         $turma->nome = $request->nome;
         $turma->email = $request->email;
         $turma->cep = $request->cep;
+        $turma->data_inicio = $request->data_inicio;
+        $turma->tipo = $request->tipo;
 
         $turma->save();
 

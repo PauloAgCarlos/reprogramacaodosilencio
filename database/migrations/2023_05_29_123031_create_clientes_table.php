@@ -14,7 +14,9 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('data_nascimento');
             $table->string('email');
+            $table->integer('id_profissional');
             $table->timestamps();
+
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfissionaisTable extends Migration
+class CreateCondutorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateProfissionaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('profissionais', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('condutors', function (Blueprint $table) {
+            $table->id();
             $table->string('nome');
             $table->string('data_nascimento');
             $table->string('email');
             $table->string('cep');
+            $table->string('rg');
+            $table->string('cpf');
+            $table->string('telefone');
             $table->string('foto')->default('/images/sem-foto.jpg');
-            $table->integer('status')->default(1);
+            $table->integer('usuario_id');
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ class CreateProfissionaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profissionais');
+        Schema::dropIfExists('condutors');
     }
 }

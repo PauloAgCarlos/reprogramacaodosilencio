@@ -14,6 +14,11 @@ class CreateTurmasTable extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('cep');
+            $table->string('data_inicio');
+            $table->string('tipo');
+            $table->boolean('e_online')->default(0);
+            $table->boolean('usar_meu_cep')->default(0);
+            $table->boolean('digitar_cep')->default(0);
             $table->timestamps();
         });
     }

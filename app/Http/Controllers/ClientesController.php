@@ -43,11 +43,10 @@ class clientesController extends Controller
         $cliente->nome = $request->nome;
         $cliente->data_nascimento = $request->data_nascimento;
         $cliente->email = $request->email;
-
+        $cliente->id_profissional = $user->id;
 
         $cliente->save();
 
-         
         // redirecionar para a página inicial
         Alert::toast('cliente Registado Com Sucesso', 'success');
 
