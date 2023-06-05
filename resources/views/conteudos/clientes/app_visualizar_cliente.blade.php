@@ -15,7 +15,6 @@
 <div class="container  bg-dark text-center" style="margin-top: 5%;">
 
   <div class="py-2">
-    <img class="img-avatar img-avatar96 " src="{{$cliente->foto}}" alt="">
     <h1 class="fw-bold text-white  ">
       {{$cliente->nome}}
     </h1>
@@ -45,7 +44,7 @@
               <h3 class="block-title text-center">Dados Gerais</h3>
             </div>
             <div class="block-content">
-              <div class="fs-4 mb-1"> {{$cliente->endereco_cep}}</div>
+              <!-- <div class="fs-4 mb-1"> {{$cliente->endereco_cep}}</div> -->
               <!-- <address class="fs-sm">
                 Endereço: {{$cliente->endereco}}, {{$cliente->numero_endereco}} <br>
                 Complemento: {{$cliente->complemento_endereco}}<br>
@@ -69,16 +68,6 @@
                     <i class="fa fa-fw fa-star"></i>
                   </span>
                   <span class="fw-medium text-muted">Data de Nascimento: {{$cliente->data_nascimento}}</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-users me-1 text-danger"></i> CEP: {{$cliente->cep}}
-                </td>
-              </tr>
-              <tr>
-                <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-users me-1 text-danger"></i> Status: {{$cliente->status}}
                 </td>
               </tr>
               <tr>
