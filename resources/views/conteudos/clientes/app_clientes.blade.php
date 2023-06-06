@@ -25,7 +25,6 @@
                     <tr>
                       <th class="text-center" style="width: 100px;">ID</th>
                       <th class="d-none d-sm-table-cell text-center">Nome</th>
-                      <th class="d-none d-sm-table-cell text-center">CEP</th>
                       <th class="d-none d-sm-table-cell text-center">Data de Nascimento</th>
                       <th class="text-center">Acções</th>
                     </tr>
@@ -41,9 +40,6 @@
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
                         <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->nome}} </a></td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm">
-                        {{$item->cep}}
-                      </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
                         <strong>{{$item->data_nascimento}}</strong>
                       </td>
