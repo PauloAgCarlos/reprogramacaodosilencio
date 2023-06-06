@@ -44,6 +44,7 @@ class turmasController extends Controller
         $turma->cep = $request->cep;
         $turma->data_inicio = $request->data_inicio;
         $turma->tipo = $request->tipo;
+        $turma->profissional_id = $user->id;
 
         $turma->save();
  

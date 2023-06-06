@@ -68,6 +68,22 @@ class condutorController extends Controller
             $condutor->save();
         }
 
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $usuario = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make('123mudar'),
+        ]);
+
+        $condutor->usuario_id = $usuario->id;
+
+        $condutor->save();
+
         // redirecionar para a página inicial
         Alert::toast('condutor Registado Com Sucesso', 'success');
 

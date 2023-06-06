@@ -36,7 +36,6 @@ class certificadosController extends Controller
 
     public function store(Request $request)
     {
-
         //
         $user = Auth::user();
 
@@ -51,9 +50,7 @@ class certificadosController extends Controller
 
         return redirect('/certificados');
     }
-
-
-
+    
     public function show($id)
     {
         $user = Auth::user();

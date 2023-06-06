@@ -40,7 +40,7 @@ class seedsFavoritosController extends Controller
         $user = Auth::user();
 
         $seed = new SeedsFavoritos;
-        $seed->profissional_id = $request->profissional_id;
+        $seed->profissional_id = $user->id;
         $seed->seed_id = $request->seed_id;
         $seed->cliente_id = $request->cliente_id;
 

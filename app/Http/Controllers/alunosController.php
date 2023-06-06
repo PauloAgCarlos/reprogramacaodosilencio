@@ -81,7 +81,6 @@ class alunosController extends Controller
         public function update(Request $request, $id)
     {
         //
-
         $aluno = Alunos::find($id);
         $aluno->nome = $request->nome;
         $aluno->data_nascimento = $request->data_nascimento;

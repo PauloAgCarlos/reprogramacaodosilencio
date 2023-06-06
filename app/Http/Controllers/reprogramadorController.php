@@ -66,6 +66,21 @@ class reprogramadorController extends Controller
             $reprogramador->save();
         }
 
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $usuario = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make('123mudar'),
+        ]);
+
+        $reprogramador->usuario_id = $usuario->id;
+
+        $reprogramador->save();
+
         // redirecionar para a página inicial
         Alert::toast('reprogramador Registado Com Sucesso', 'success');
 

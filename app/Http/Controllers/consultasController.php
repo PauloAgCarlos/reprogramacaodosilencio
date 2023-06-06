@@ -40,7 +40,7 @@ class consultasController extends Controller
 
         $consulta = new Consultas;
         $consulta->id_aluno = $request->id_aluno;
-        $consulta->id_profissional = $request->id_profissional;
+        $consulta->id_profissional = $user->id;
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
 

@@ -16,6 +16,7 @@ class CreateTurmasTable extends Migration
             $table->string('cep');
             $table->string('data_inicio');
             $table->string('tipo');
+            $table->integer('profissional_id');
             $table->boolean('e_online')->default(0);
             $table->boolean('usar_meu_cep')->default(0);
             $table->boolean('digitar_cep')->default(0);

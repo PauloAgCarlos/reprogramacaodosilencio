@@ -45,7 +45,7 @@ class arquitetoController extends Controller
         $arquiteto->data_nascimento = $request->data_nascimento;
         $arquiteto->email = $request->email;
         $arquiteto->cep = $request->cep;
-        $arquiteto->usuario_id = $request->usuario_id;
+        $arquiteto->usuario_id = 0;
         
 
         // Verificando se a foto é válida
@@ -65,6 +65,21 @@ class arquitetoController extends Controller
             $arquiteto->foto = '/images/arquitetos/imag_'.$arquiteto->id.'.'.$extensaoI;
             $arquiteto->save();
         }
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        ]);
+
+        $usuario = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make('123mudar'),
+        ]);
+
+        $arquiteto->usuario_id = $usuario->id;
+
+        $arquiteto->save();
 
         // redirecionar para a página inicial
         Alert::toast('arquiteto Registado Com Sucesso', 'success');
