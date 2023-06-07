@@ -16,7 +16,7 @@
           <!-- Info -->
           <div class="block block-rounded">
             <div class="block-header block-header-default">
-              <h3 class="block-title">Registar Novo Cliente</h3>
+              <h3 class="block-title">Registar Turma</h3>
             </div>
             <div class="block-content">
               <div class="row justify-content-center">
@@ -24,7 +24,7 @@
                   <form action="/salvar_turma" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4 col-5 inline-block">
-                      <label class="form-label" for="dm-ecom-product-name">Nome do Cliente</label>
+                      <label class="form-label" for="dm-ecom-product-name">Nome da Turma</label>
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="nome" value="">
                     </div>
                     <div class="mb-4 col-5 inline-block">
@@ -45,7 +45,7 @@
                     </div>
                     
                     <div class="mb-4">
-                      <button type="submit" class="btn btn-primary">Salvar Cliente</button>
+                      <button type="submit" class="btn btn-primary">Salvar Turma</button>
                     </div>
                   </form>
                 </div>
