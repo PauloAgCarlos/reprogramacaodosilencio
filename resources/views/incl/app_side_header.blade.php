@@ -8,33 +8,16 @@
         C<span class="opacity-75">Z</span>
       </span>
       <span class="smini-hidden">
-        <!-- <img style="width: 50px; height: 50px;" src="assets/media/photos/amis.png">  -->
         <img style="width: 100%; height: 100px;" src="/images/logo1.png">
-        <!-- <img style="width: 90px; height: 50px;" src="/assets/media/photos/branco1.jpeg"> -->
         <br>
 
-        <!-- AM<span class="opacity-75">IS</span> -->
       </span>
     </a>
     <!-- END Logo -->
 
     <!-- Options -->
     <div>
-<!-- 
-      <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#sidebar-style-toggler" data-class="fa-toggle-off fa-toggle-on" onclick="Dashmix.layout('sidebar_style_toggle');Dashmix.layout('header_style_toggle');">
-        <i class="fa fa-toggle-off" id="sidebar-style-toggler"></i>
-      </button> -->
-      <!-- END Toggle Sidebar Style -->
 
-      <!-- Dark Mode -->
-      <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-      <!-- <button type="button" class="btn btn-sm btn-alt-secondary" data-toggle="class-toggle" data-target="#dark-mode-toggler" data-class="far fa" onclick="Dashmix.layout('dark_mode_toggle');">
-        <i class="far fa-moon" id="dark-mode-toggler"></i>
-      </button> -->
-      <!-- END Dark Mode -->
-
-      <!-- Close Sidebar, Visible only on mobile screens -->
-      <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
       <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
         <i class="fa fa-times-circle"></i>
       </button>
@@ -116,12 +99,7 @@
                 </a>
               </li>
               @endcan
-              <!-- <li class="nav-main-item">
-                        <a class="nav-main-link" href="/grades">
-                          <span class="nav-main-link-name">Grade</span>
-                        </a>
-                      </li> -->
-                      {{-- só quem tem permissão para visualizar esta página --}}
+                {{-- só quem tem permissão para visualizar esta página --}}
               @can('pode_visualizar_responsavel')
               <li class="nav-main-item">
                 <a class="nav-main-link" href="/responsaveis">
@@ -145,11 +123,6 @@
                 </a>
               </li>
               @endcan
-              <!-- <li class="nav-main-item">
-                <a class="nav-main-link" href="/anos_lectivos">
-                  <span class="nav-main-link-name">Anos Letivos</span>
-                </a>
-              </li> -->
 
             </ul>
           </li>
@@ -171,11 +144,6 @@
               </li>
             </ul>
             <ul class="nav-main-submenu">
-              <!-- <li class="nav-main-item">
-                <a class="nav-main-link" href="/modulos">
-                  <span class="nav-main-link-name">Módulo</span>
-                </a>
-              </li> -->
               {{-- só quem tem permissão para visualizar esta página --}}
               @can('pode_visualizar_chamada')
               <li class="nav-main-item">
@@ -217,63 +185,11 @@
               @endcan
               {{-- só quem tem permissão para visualizar esta página --}}
               @can('pode_visualizar_digitacao')
-              <!-- <li class="nav-main-item">
-                <a class="nav-main-link" href="/digitacoes">
-                  <span class="nav-main-link-name">Digitação</span>
-                </a>
-              </li> -->
               @endcan
 
             </ul>
           </li>
 
-          <!-- <li class="nav-main-item">
-            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Eventos</span>
-            </a>
-            <ul class="nav-main-submenu">
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_cronograma')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="/calendario">
-                  <span class="nav-main-link-name">Cronograma</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_agendamento')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Agendamento</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_planeamento')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Planejamento</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_feriado')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Feriados</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_cardapio')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Cardápios</span>
-                </a>
-              </li>
-              @endcan
-            </ul>
-          </li> -->
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
               <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Relatórios</span>
@@ -295,22 +211,6 @@
                 </a>
               </li>
               @endcan
-              <!-- {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_relatorio_pedagogico')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Pedagógico</span>
-                </a>
-              </li>
-              @endcan
-              {{-- só quem tem permissão para visualizar esta página --}}
-              @can('pode_visualizar_relatorio_documento')
-              <li class="nav-main-item">
-                <a class="nav-main-link" href="#">
-                  <span class="nav-main-link-name">Documentos</span>
-                </a>
-              </li>
-              @endcan -->
               {{-- só quem tem permissão para visualizar esta página --}}
               @can('pode_visualizar_relatorio_funcionario')
               <li class="nav-main-item">

@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Dashmix - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>Reprogramação Silênciosa</title>
 
-    <meta name="description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="description" content="Reprogramação Silênciosa created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework">
+    <meta property="og:title" content="Reprogramação Silênciosa">
     <meta property="og:site_name" content="Dashmix">
-    <meta property="og:description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta property="og:description" content="Reprogramação Silênciosa created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -74,7 +74,7 @@
                         <div>
                           <x-label for="password" />
                           <div>              
-                            <x-input id="password" class="form-control form-control-lg form-control-alt" type="password" placeholder="Password" name="password" required autocomplete="current-password" />
+                            <x-input id="password" class="form-control form-control-lg form-control-alt" type="password" placeholder="Senha" name="password" required autocomplete="current-password" />
                           </div>
                         </div>
                       </div>
@@ -82,7 +82,7 @@
                       <div class="block">
                               <label for="remember_me" class="inline-flex items-center">
                                   <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                  <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                  <span class="ml-2 text-sm text-gray-600">{{ __('Lembrar-me') }}</span>
                               </label>
                           </div>
 
