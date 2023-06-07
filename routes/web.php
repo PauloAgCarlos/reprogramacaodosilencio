@@ -32,14 +32,6 @@ Route::get('/eliminar_cliente/{id}', 'App\Http\Controllers\clientesController@de
 Route::post('/actualizar_cliente/{id}', 'App\Http\Controllers\clientesController@update')->middleware('auth');
 Route::post('/salvar_cliente', 'App\Http\Controllers\clientesController@store')->middleware('auth');
 
-Route::get('/profissionais', 'App\Http\Controllers\profissionaisController@index')->middleware('auth');
-Route::get('/registar_profissional', 'App\Http\Controllers\profissionaisController@create')->middleware('auth');
-Route::get('/editar_profissional/{id}', 'App\Http\Controllers\profissionaisController@edit')->middleware('auth');
-Route::get('/visualizar_profissional/{id}', 'App\Http\Controllers\profissionaisController@show')->middleware('auth');
-Route::get('/eliminar_profissional/{id}', 'App\Http\Controllers\profissionaisController@destroy')->middleware('auth');
-Route::post('/actualizar_profissional/{id}', 'App\Http\Controllers\profissionaisController@update')->middleware('auth');
-Route::post('/salvar_profissional', 'App\Http\Controllers\profissionaisController@store')->middleware('auth');
-
 // Route::get('/pacientes', 'App\Http\Controllers\pacientesController@index')->middleware('auth');
 // Route::get('/registar_paciente', 'App\Http\Controllers\pacientesController@create')->middleware('auth');
 // Route::get('/editar_paciente/{id}', 'App\Http\Controllers\pacientesController@edit')->middleware('auth');
