@@ -28,11 +28,11 @@
             <i class="fa fa-users fa-lg text-primary"></i>
             </div>
             <div class="fs-1 fw-bold">14.6</div>
-            <div class="text-muted mb-3">Profissionais</div>
+            <div class="text-muted mb-3">Turmas</div>
         </div>
         <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
-            <a class="fw-medium" href="/profissionais">
-            Visualizar Profissionais
+            <a class="fw-medium" href="/turmas">
+            Visualizar Turmas
             <i class="fa fa-arrow-right ms-1 opacity-25"></i>
             </a>
         </div>
