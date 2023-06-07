@@ -15,7 +15,7 @@
  
 <!-- Latest Friends -->
 <h2 class="content-heading">
-        Listagem de Turmas
+        Listagem de Usuarios
           </h2>
  
               <!-- All Products Table -->
@@ -26,15 +26,13 @@
                       <th class="text-center" style="width: 100px;">ID</th>
                       <th class="d-none d-sm-table-cell text-center">Nome</th>                      
                       <th class="d-none d-sm-table-cell text-center">Email</th>
-                      <th class="d-none d-sm-table-cell text-center">CEP</th>
-                      <th class="d-none d-sm-table-cell text-center">Data Inicio</th>
-                      <th class="d-none d-sm-table-cell text-center">Tipo</th>
+                      <th class="d-none d-sm-table-cell text-center">Senha</th>
                       <th class="text-center">Acções</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                  @foreach($turmas as $item)
+                  @foreach($usuarios as $item)
                     <tr>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
                         <a class="fw-semibold" href="javascript:void(0)">
@@ -42,28 +40,22 @@
                         </a>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->nome}} </a>
+                        <a class="fw-semibold" href="/visualizar_usuario/{{$item->id}}"> {{$item->name}} </a>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->email}} </a>
+                        <a class="fw-semibold" href="/visualizar_usuario/{{$item->id}}"> {{$item->email}} </a>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->cep}} </a>
-                      </td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->data_inicio}} </a>
-                      </td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->tipo}} </a>
+                        <a class="fw-semibold" href="/visualizar_usuario/{{$item->id}}"> {{$item->password}} </a>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
                         <strong>{{$item->data_nascimento}}</strong>
                       </td>
                       <td class="text-center fs-sm">
-                        <a class="btn btn-sm btn-alt-secondary" href="/visualizar_cliente/{{$item->id}}">
+                        <!-- <a class="btn btn-sm btn-alt-secondary" href="/visualizar_usuario/{{$item->id}}">
                           <i class="fa fa-fw fa-eye"></i>
-                        </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_cliente/{{$item->id}}">
+                        </a> -->
+                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_usuario/{{$item->id}}">
                           <i class="fa fa-fw fa-times text-danger"></i>
                         </a>
                       </td>

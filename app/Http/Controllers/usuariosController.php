@@ -22,7 +22,7 @@ class usuariosController extends Controller
 
         $usuarios = User::all();
 
-        return $usuarios;
+        return view('conteudos.usuarios.app_usuarios', compact('user', 'usuarios'));
 
     }
 
@@ -31,8 +31,8 @@ class usuariosController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar usuario';
-        // return view('conteudos.usuarios.app_registar_usuario', compact('user','fornecedores'));
+        // return 'registar usuario';
+        return view('conteudos.usuarios.app_register_usuario', compact('user'));
     }
 
     public function store(Request $request)
@@ -64,9 +64,9 @@ class usuariosController extends Controller
         $user = Auth::user();
         $usuario = User::find($id);
 
-        return $usuario;
+        // return $usuario;
 
-        // return view('conteudos.usuarios.app_visualizar_usuario', compact('usuario'));
+        return view('conteudos.usuarios.app_visualizar_usuario', compact('user','usuario'));
     }
 
 
