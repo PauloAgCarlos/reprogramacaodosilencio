@@ -28,7 +28,8 @@ class adminController extends Controller
 
         $permissoes = Permission::all();
 
-        return $permissoes;
+        // return $permissoes;
+        return view('admin.app_permissions', compact('user', 'permissoes'));
     }
 
 
@@ -87,7 +88,6 @@ class adminController extends Controller
             $selected[] = $option->name;
         }
 
-        // return $permissions_roles;
         return view('admin.app_permissions_roles', compact('user','permissions_roles', 'role_id', 'roles', 'selected'));
     }
 

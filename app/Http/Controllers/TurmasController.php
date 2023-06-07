@@ -18,7 +18,8 @@ class turmasController extends Controller
 
         $turmas = Turmas::all();
 
-        return $turmas;
+        // return $turmas;
+        return view('conteudos.turmas.app_turmas', compact('user', 'turmas'));
 
     }
 
@@ -28,8 +29,8 @@ class turmasController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar turma';
-        // return view('conteudos.turmas.app_registar_turma', compact('user','fornecedores'));
+        // return 'registar turma';
+        return view('conteudos.turmas.app_register_turma', compact('user'));
     }
 
     public function store(Request $request)
@@ -61,9 +62,9 @@ class turmasController extends Controller
         $user = Auth::user();
         $turma = Turmas::find($id);
 
-        return $turma;
+        // return $turma;
 
-        // return view('conteudos.turmas.app_visualizar_turma', compact('turma'));
+        return view('conteudos.turmas.app_visualizar_turma', compact('turma'));
     }
 
 

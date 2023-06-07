@@ -67,17 +67,17 @@
 
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Profissionais</span>
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Turmas</span>
             </a>
             <ul class="nav-main-submenu">
               <li class="nav-main-item">
-                <a class="nav-main-link" href="/profissionais">
-                  <span class="nav-main-link-name">Listar Profissionais</span>
+                <a class="nav-main-link" href="/turmas">
+                  <span class="nav-main-link-name">Listar Turmas</span>
                 </a>
               </li>
               <li class="nav-main-item">
-                <a class="nav-main-link" href="/registar_profissional">
-                  <span class="nav-main-link-name">Cadastrar Profissional</span>
+                <a class="nav-main-link" href="/registar_turma">
+                  <span class="nav-main-link-name">Cadastrar Turmas</span>
                 </a>
               </li>
             </ul>
