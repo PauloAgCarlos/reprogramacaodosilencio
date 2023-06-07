@@ -35,8 +35,8 @@
       <!-- Main Container -->
       <main id="main-container">
         <!-- Page Content -->
-        <div class="bg-image" style="background-image: url('assets/media/photos/photo22@2x.jpg');">
-          <div class="row g-0 bg-primary-op">
+        <div style="background-image: url('images/imglg.webp'); background-position: right; background-size:contain; background-repeat:no-repeat;">
+          <div class="row g-0" style="background-color: rgba(76, 42, 110, 0.76);">
             <!-- Main Section -->
             <div class="hero-static col-md-6 d-flex align-items-center bg-body-extra-light">
               <div class="p-3 w-100">
@@ -56,36 +56,11 @@
               
                       <form method="POST" action="{{ route('login') }}">
                           @csrf
-              
-                          <!-- Password -->
-              
-                          <!-- Remember Me
-                          <div class="block mt-4">
-                              <label for="remember_me" class="inline-flex items-center">
-                                  <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                  <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                              </label>
-                          </div>
-              
-                          <div class="flex items-center justify-end mt-4">
-                              @if (Route::has('password.request'))
-                                  <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                      {{ __('Forgot your password?') }}
-                                  </a>
-                              @endif
-              
-                              <x-button class="ml-3">
-                                  {{ __('Log in') }}
-                              </x-button>
-                          </div> -->
                   </x-auth-card>
               </x-guest-layout>
               
                 <div class="text-center">
-                  <a class="link-fx fw-bold fs-1" href="index.html">
-                    <span class="text-dark">Programação</span><span class="text-primary">Silenciosa</span>
-                  </a>
-                  <p class="text-uppercase fw-bold fs-sm text-muted">Iniciar Sessão</p>
+                  <img src="{{url('images/Reprogramacao-0dB.gif')}}" alt="Logotipo da Repromação Silênciosa" style="background-color: #4c2a6e; border-radius: 10px;">
                 </div>
                 <!-- END Header -->
                 <div class="row g-0 justify-content-center">
@@ -112,15 +87,10 @@
                           </div>
 
                       <div class="mb-4">
-                        <x-button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
+                        <x-button type="submit" class="btn w-100 btn-lg btn-hero" style="background-color: #4c2a6e;">
                             <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Iniciar Sessão
                         </x-button>
                         <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
-                              <!-- @if (Route::has('password.request'))
-                                  <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="{{ route('password.request') }}">
-                                    <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Forgot password
-                                  </a>
-                              @endif        -->
                           <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="/register">
                             <i class="fa fa-plus opacity-50 me-1"></i> Criar Nova Conta
                           </a>
@@ -138,10 +108,10 @@
             <div class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
               <div class="p-3">
                 <p class="display-4 fw-bold text-white mb-3">
-                  Bem Vindo ao futuro
+                  Bem Vindo a Reprogramação do Silêncio
                 </p>
                 <p class="fs-lg fw-semibold text-white-75 mb-0">
-                  Copyright &copy; <span data-toggle="year-copy"></span>
+                  Técnica Revolucionária 
                 </p>
               </div>
             </div>

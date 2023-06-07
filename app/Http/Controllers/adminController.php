@@ -16,13 +16,6 @@ use Carbon\Carbon;
 
 class adminController extends Controller
 {
-
-    public function index()
-    {
-        $user = Auth::user();
-
-        return 'admin';
-    }
     public function login()
     {
             //
@@ -94,7 +87,8 @@ class adminController extends Controller
             $selected[] = $option->name;
         }
 
-        return $permissions_roles;
+        // return $permissions_roles;
+        return view('admin.app_permissions_roles', compact('user','permissions_roles', 'role_id', 'roles', 'selected'));
     }
 
     public function permissions_roles_by_id($id){
