@@ -49,7 +49,7 @@
                       <div class="py-3">
                         <div>
                             <x-label for="name" />
-                            <x-input type="text" name="name" :value="old('name')" required autofocus  class="form-control form-control-lg form-control-alt" id="signup-username"  placeholder="Name"/>
+                            <x-input type="text" name="name" :value="old('name')" required autofocus  class="form-control form-control-lg form-control-alt" id="signup-username"  placeholder="Nome"/>
                         </div>
                         <div>
                             <x-label for="email"/>
@@ -57,16 +57,16 @@
                         </div>
                         <div>
                             <x-label for="password" />
-                            <x-input id="password" class="form-control form-control-lg form-control-alt" type="password" name="password" required autocomplete="new-password" placeholder="Password" />
+                            <x-input id="password" class="form-control form-control-lg form-control-alt" type="password" name="password" required autocomplete="new-password" placeholder="Senha" />
                         </div>
                         <div>
                             <x-label for="password_confirmation" />
-                            <x-input id="password_confirmation" class="form-control form-control-lg form-control-alt" id="signup-password-confirm" type="password" placeholder="Password Confirm" name="password_confirmation" required />
+                            <x-input id="password_confirmation" class="form-control form-control-lg form-control-alt" id="signup-password-confirm" type="password" placeholder="Confirmar Senha" name="password_confirmation" required />
                         </div>
                         <div class="mb-4">
                           <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="signup-terms" name="signup-terms">
-                            <label class="form-check-label" for="signup-terms">I agree to Terms &amp; Conditions</label>
+                            <label class="form-check-label" for="signup-terms">Eu concordo com os Termos e &amp; Condições</label>
                           </div>
                         </div>
                       </div>
@@ -76,10 +76,10 @@
                         </button>
                         <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                           <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="/login">
-                            <i class="fa fa-sign-in-alt opacity-50 me-1"></i> Sign In
+                            <i class="fa fa-sign-in-alt opacity-50 me-1"></i> Entrar
                           </a>
                           <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="#" data-bs-toggle="modal" data-bs-target="#modal-terms">
-                            <i class="fa fa-book opacity-50 me-1"></i> Read Terms
+                            <i class="fa fa-book opacity-50 me-1"></i> Ler Termos
                           </a>
                         </p>
                       </div>
