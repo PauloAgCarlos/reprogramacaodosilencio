@@ -4,30 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Dashmix - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>Reprogramação Silênciosa</title>
 
-    <meta name="description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="description" content="Reprogramação Silênciosa created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework">
+    <meta property="og:title" content="Reprogramação Silênciosa">
     <meta property="og:site_name" content="Dashmix">
-    <meta property="og:description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta property="og:description" content="Reprogramação Silênciosa created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="{{url('assets/media/favicons/favicon')}}'">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{url('assets/media/favicons/favicon-192x192')}}'">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/media/favicons/apple-touch-icon-180x180')}}'">
-    <!-- END Icons -->
-
-    <!-- Stylesheets -->
-    <!-- Fonts and Dashmix framework -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="shortcut icon" href="{{url('assets/media/favicons/favicon')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{url('assets/media/favicons/favicon-192x192.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/media/favicons/apple-touch-icon-180x180.png')}}">
     <link rel="stylesheet" id="css-main" href="{{url('assets/css/dashmix.min.css')}}">
 
   </head>
@@ -37,23 +32,19 @@
       <!-- Main Container -->
       <main id="main-container">
         <!-- Page Content -->
-        <div class="bg-image" style="background-image: url('assets/media/photos/photo12@2x.jpg');">
-          <div class="row g-0 justify-content-center bg-black-75">
-            <!-- Main Section -->
-            <div class="hero-static col-md-6 d-flex align-items-center bg-body-extra-light">
-              <div class="p-3 w-100">
-                <!-- Header -->
-                <div class="mb-3 text-center">
-                  <a class="link-fx fw-bold fs-1" href="index.html">
-                    <span class="text-dark">Dash</span><span class="text-primary">mix</span>
-                  </a>
-                  <p class="text-uppercase fw-bold fs-sm text-muted">Create New Account</p>
-                </div>
-                <!-- END Header -->
-
-                <div class="row g-0 justify-content-center">
-                  <div class="col-sm-8 col-xl-6">
-                    <form method="POST" action="{{ route('register') }}" >
+        <div style="background-image: url('images/so-usamos-10-do-nosso-cerebro-2-1024x768.jpeg'); background-position: center; background-size:cover; background-repeat:no-repeat;">
+          <div class="row g-0 justify-content-center bg-black-25">
+            <div class="hero-static col-sm-8 col-md-6 col-xl-4 d-flex align-items-center p-2 px-sm-0">
+              <!-- Sign Up Block -->
+              <div class="block block-transparent block-rounded w-100 mb-0 overflow-hidden">
+                <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-3 bg-body-extra-light">
+                  <!-- Header -->
+                  
+                  <div class="text-center">
+                    <img src="{{url('images/Reprogramacao-0dB.gif')}}" alt="Logotipo da Repromação Silênciosa" style="background-color: #4c2a6e; border-radius: 10px;">                  
+                    <p class="text-uppercase fw-bold fs-sm text-muted">Criar Nova Conta</p>
+                  </div>
+                  <form method="POST" action="{{ route('register') }}" >
                         @csrf
                       <div class="py-3">
                         <div>
@@ -80,8 +71,8 @@
                         </div>
                       </div>
                       <div class="mb-4">
-                        <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
-                          <i class="fa fa-fw fa-plus opacity-50 me-1"></i> Sign Up
+                        <button type="submit" class="btn w-100 btn-lg btn-hero" style="background-color: #4c2a6e; color: #fff;"> 
+                          <i class="fa fa-fw fa-plus opacity-50 me-1"></i> Inscrever-se
                         </button>
                         <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                           <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="/login">
@@ -93,12 +84,10 @@
                         </p>
                       </div>
                     </form>
-                  </div>
+                  <!-- END Sign Up Form -->
                 </div>
-                <!-- END Sign Up Form -->
               </div>
             </div>
-            <!-- END Main Section -->
           </div>
 
           <!-- Terms Modal -->
@@ -106,8 +95,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="block block-themed block-transparent mb-0">
-                  <div class="block-header bg-primary-dark">
-                    <h3 class="block-title">Terms &amp; Conditions</h3>
+                  <div class="block-header bg-success">
+                    <h3 class="block-title">Termos de &amp; Condições</h3>
                     <div class="block-options">
                       <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                         <i class="fa fa-fw fa-times"></i>
@@ -115,11 +104,8 @@
                     </div>
                   </div>
                   <div class="block-content">
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
-                    <p>Dolor posuere proin blandit accumsan senectus netus nullam curae, ornare laoreet adipiscing luctus mauris adipiscing pretium eget fermentum, tristique lobortis est ut metus lobortis tortor tincidunt himenaeos habitant quis dictumst proin odio sagittis purus mi, nec taciti vestibulum quis in sit varius lorem sit metus mi.</p>
+                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+                    <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
                   </div>
                   <div class="block-content block-content-full text-end bg-body">
                     <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Done</button>
@@ -136,10 +122,13 @@
     </div>
     <script src="{{url('assets/js/dashmix.app.min.js')}}"></script>
 
+    <!-- jQuery (required for jQuery Validation plugin) -->
     <script src="{{url('assets/js/lib/jquery.min.js')}}"></script>
 
+    <!-- Page JS Plugins -->
     <script src="{{url('assets/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 
+    <!-- Page JS Code -->
     <script src="{{url('assets/js/pages/op_auth_signup.min.js')}}"></script>
   </body>
 </html>
