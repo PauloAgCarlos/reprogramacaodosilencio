@@ -12,7 +12,6 @@ Route::get('/index.html', 'App\Http\Controllers\adminController@dashboard')->mid
 Route::get('/dashboard', 'App\Http\Controllers\adminController@dashboard')->middleware('auth')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\adminController@logout')->middleware('auth');
 
-Route::get('/admin', 'App\Http\Controllers\adminController@index')->middleware('auth');
 Route::get('/permissoes', 'App\Http\Controllers\adminController@permissoes')->middleware('auth');
 Route::get('/roles_users','App\Http\Controllers\adminController@roles_users') ->name('roles');
 Route::get('/permissions_roles','App\Http\Controllers\adminController@permissions_roles')->name('permissions');
