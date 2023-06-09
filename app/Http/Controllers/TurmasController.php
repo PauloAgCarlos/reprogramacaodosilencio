@@ -71,11 +71,12 @@ class turmasController extends Controller
     public function edit($id)
     {
         //
+        $user = Auth::user();
         $turma = Turmas::find($id);
 
 
-        return $turma;
-        // return view('conteudos.turmas.app_editar_turma', compact('organizacoes','turma'));
+        // return $turma;
+        return view('conteudos.turmas.app_editar_turma', compact('user','turma'));
     }
 
     public function update(Request $request, $id)

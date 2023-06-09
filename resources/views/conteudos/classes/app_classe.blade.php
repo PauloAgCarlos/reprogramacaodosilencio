@@ -15,25 +15,25 @@
  
 <!-- Latest Friends -->
 <h2 class="content-heading">
-        Listagem de Turmas
+        Classes
           </h2>
  
-          <div class="table-responsive">
-            <thead>
-                    <table class="table table-borderless table-striped table-vcenter">
+              <!-- All Products Table -->
+              <div class="table-responsive">
+                <table class="table table-borderless table-striped table-vcenter">
+                  <thead>
                     <tr>
                       <th class="text-center" style="width: 100px;">ID</th>
-                      <th class="d-none d-sm-table-cell text-center">Nome</th>                      
-                      <th class="d-none d-sm-table-cell text-center">Email</th>
-                      <th class="d-none d-sm-table-cell text-center">CEP</th>
+                      <th class="d-none d-sm-table-cell text-center">Nome</th>
                       <th class="d-none d-sm-table-cell text-center">Data Inicio</th>
-                      <th class="d-none d-sm-table-cell text-center">Tipo</th>
+                      <th class="d-none d-sm-table-cell text-center">Nível</th>
+                      <th class="d-none d-sm-table-cell text-center">Endereço</th>
                       <th class="text-center">Acções</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                  @foreach($turmas as $item)
+                  @foreach($classes as $item)
                     <tr>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
                         <a class="fw-semibold" href="javascript:void(0)">
@@ -44,22 +44,19 @@
                         <a class="fw-semibold" href="/visualizar_cliente/{{$item->id}}"> {{$item->nome}} </a>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <strong>{{$item->email}}</strong>
-                      </td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <strong>{{$item->cep}}</strong>
-                      </td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm">
                         <strong>{{$item->data_inicio}}</strong>
                       </td>
                       <td class="d-none d-sm-table-cell text-center fs-sm">
-                        <strong>{{$item->tipo}}</strong>
+                        <strong>{{$item->nivel}}</strong>
+                      </td>
+                      <td class="d-none d-sm-table-cell text-center fs-sm">
+                        <strong>{{$item->endereco}}</strong>
                       </td>
                       <td class="text-center fs-sm">
-                      <a class="btn btn-sm btn-alt-secondary" href="/editar_turma/{{$item->id}}" data-toggle="click-ripple">
+                      <a class="btn btn-sm btn-alt-secondary" href="/editar_classe/{{$item->id}}" data-toggle="click-ripple">
                         <i class="fa fa-pencil-alt text-primary"></i>
                       </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_turma/{{$item->id}}">
+                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_classe/{{$item->id}}">
                           <i class="fa fa-fw fa-times text-danger"></i>
                         </a>
                       </td>
@@ -69,7 +66,6 @@
                   </tbody>
                 </table>
               </div>
-
               <!-- END All Products Table -->
 
             

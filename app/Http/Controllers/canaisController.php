@@ -42,6 +42,7 @@ class canaisController extends Controller
 
         $consulta = new Canais;
         $consulta->nome = $request->nome;
+        $consulta->save();
 
         // redirecionar para a página inicial
         Alert::toast('consulta Registado Com Sucesso', 'success');
