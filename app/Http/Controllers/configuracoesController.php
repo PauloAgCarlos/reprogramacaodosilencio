@@ -19,7 +19,7 @@ class configuracoesController extends Controller
 
         $configuracoes = Configuracoes::all();
 
-        return view('conteudos.configuracoes.app_configuracao', compact('user', 'configuracoes'));
+        return view('conteudos.configuracoes.app_configuracoes', compact('user', 'configuracoes'));
 
     }
 

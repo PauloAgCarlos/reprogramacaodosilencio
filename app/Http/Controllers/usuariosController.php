@@ -73,10 +73,11 @@ class usuariosController extends Controller
     public function edit($id)
     {
         //
+        $user = Auth::user();
         $usuario = User::find($id);
 
-        return $usuario;
-        // return view('conteudos.usuarios.app_editar_usuario', compact('organizacoes','usuario'));
+        // return $usuario;
+        return view('conteudos.usuarios.app_editar_usuario', compact('user', 'usuario'));
     }
 
     public function update(Request $request, $id)

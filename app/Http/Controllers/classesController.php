@@ -43,6 +43,7 @@ class classesController extends Controller
         $classe->data_inicio = $request->data_inicio;
         $classe->nivel = $request->nivel;
         $classe->endereco = $request->endereco;
+        $classe->save();
 
         // redirecionar para a página inicial
         Alert::toast('classe Registado Com Sucesso', 'success');
