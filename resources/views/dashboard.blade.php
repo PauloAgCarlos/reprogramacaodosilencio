@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-xl-3">
+    <!-- <div class="col-sm-6 col-xl-3">
         <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
         <div class="block-content block-content-full">
             <div class="item rounded-3 bg-body mx-auto my-3">
@@ -122,7 +122,7 @@
             </a>
         </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- END Overview -->
 
