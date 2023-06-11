@@ -108,13 +108,13 @@ Route::post('/salvar_arquito', 'App\Http\Controllers\arquitosController@store')-
 
 
 
-Route::get('/reprogramadores', 'App\Http\Controllers\reprogramadoresController@index')->middleware('auth');
-Route::get('/registar_reprogramador', 'App\Http\Controllers\reprogramadoresController@create')->middleware('auth');
-Route::get('/editar_reprogramador/{id}', 'App\Http\Controllers\reprogramadoresController@edit')->middleware('auth');
-Route::get('/visualizar_reprogramador/{id}', 'App\Http\Controllers\reprogramadoresController@show')->middleware('auth');
-Route::get('/eliminar_reprogramador/{id}', 'App\Http\Controllers\reprogramadoresController@destroy')->middleware('auth');
-Route::post('/actualizar_reprogramador/{id}', 'App\Http\Controllers\reprogramadoresController@update')->middleware('auth');
-Route::post('/salvar_reprogramador', 'App\Http\Controllers\reprogramadoresController@store')->middleware('auth');
+Route::get('/reprogramadores', 'App\Http\Controllers\reprogramadorController@index')->middleware('auth');
+Route::get('/registar_reprogramador', 'App\Http\Controllers\reprogramadorController@create')->middleware('auth');
+Route::get('/editar_reprogramador/{id}', 'App\Http\Controllers\reprogramadorController@edit')->middleware('auth');
+Route::get('/visualizar_reprogramador/{id}', 'App\Http\Controllers\reprogramadorController@show')->middleware('auth');
+Route::get('/eliminar_reprogramador/{id}', 'App\Http\Controllers\reprogramadorController@destroy')->middleware('auth');
+Route::post('/actualizar_reprogramador/{id}', 'App\Http\Controllers\reprogramadorController@update')->middleware('auth');
+Route::post('/salvar_reprogramador', 'App\Http\Controllers\reprogramadorController@store')->middleware('auth');
 
 
 

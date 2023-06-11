@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Alert;
 
 
-class arquitetoController extends Controller
+class arquitosController extends Controller
 {
     //
     
@@ -21,7 +21,7 @@ class arquitetoController extends Controller
 
         $arquitetos = Arquitetos::all();
 
-        return view('conteudos.arquitetos.app_arquiteto', compact('user', 'arquitetos'));
+        return view('conteudos.arquivos.app_arquivo', compact('user', 'arquitetos'));
 
     }
 

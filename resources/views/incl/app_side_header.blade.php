@@ -129,6 +129,68 @@
 
           <li class="nav-main-item">
             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+              <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Alunos</span>
+            </a>
+            <ul class="nav-main-submenu">
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/alunos">
+                  <span class="nav-main-link-name">Listar Alunos</span>
+                </a>
+              </li>
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/registar_aluno">
+                  <span class="nav-main-link-name">Cadastrar Alunos</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav-main-submenu">
+            {{-- só quem tem permissão para visualizar esta página --}}
+              @can('pode_visualizar_matricula')
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/matriculas">
+                  <span class="nav-main-link-name">Matrículas</span>
+                </a>
+              </li>
+              @endcan
+
+              {{-- só quem tem permissão para visualizar esta página --}}
+              @can('pode_visualizar_matricula')
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/transferencias">
+                  <span class="nav-main-link-name">Transferências</span>
+                </a>
+              </li>
+              @endcan
+                {{-- só quem tem permissão para visualizar esta página --}}
+              @can('pode_visualizar_responsavel')
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/responsaveis">
+                  <span class="nav-main-link-name">Responsáveis</span>
+                </a>
+              </li>
+              @endcan
+              {{-- só quem tem permissão para visualizar esta página --}}
+              @can('pode_visualizar_estudante')
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/estudantes">
+                  <span class="nav-main-link-name">Beneficiários</span>
+                </a>
+              </li>
+              @endcan
+              {{-- só quem tem permissão para visualizar esta página --}}
+              @can('pode_visualizar_documento')
+              <li class="nav-main-item">
+                <a class="nav-main-link" href="/listar_documentos">
+                  <span class="nav-main-link-name">Documentos</span>
+                </a>
+              </li>
+              @endcan
+
+            </ul>
+          </li>
+
+          <li class="nav-main-item">
+            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
               <i class="nav-main-link-icon fa fa-paste"></i> <span class="nav-main-link-name">Turmas</span>
             </a>
             <ul class="nav-main-submenu">
