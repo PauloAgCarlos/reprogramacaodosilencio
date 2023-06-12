@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
+use App\Models\Alunos;
+use App\Models\User;
 
 class certificadosController extends Controller
 {
@@ -29,9 +31,11 @@ class certificadosController extends Controller
     {
         //
         $user = Auth::user();
+        $alunos = Alunos::all();
+        $instrutores = User::all();
 
         // return 'registar certificado';
-        return view('conteudos.certificados.app_registar_certificado', compact('user'));
+        return view('conteudos.certificados.app_registar_certificado', compact('user', 'alunos','instrutores'));
     }
 
     public function store(Request $request)

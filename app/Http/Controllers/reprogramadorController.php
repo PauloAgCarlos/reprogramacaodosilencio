@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class reprogramadorController extends Controller
 {
@@ -40,12 +42,13 @@ class reprogramadorController extends Controller
         //
         $user = Auth::user();
 
+
         $reprogramador = new Reprogramador;
         $reprogramador->nome = $request->nome;
         $reprogramador->data_nascimento = $request->data_nascimento;
         $reprogramador->email = $request->email;
         $reprogramador->cep = $request->cep;
-        $reprogramador->usuario_id = $request->usuario_id;
+        $reprogramador->usuario_id = 0;
         
 
         // Verificando se a foto é válida
@@ -66,13 +69,15 @@ class reprogramadorController extends Controller
             $reprogramador->save();
         }
 
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        ]);
+        Alert::toast('reprogramador Registado Com Sucesso', 'success');
+
+        // $request->validate([
+            //     'name' => ['required', 'string', 'max:255'],
+            //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // ]);
 
         $usuario = User::create([
-            'name' => $request->name,
+            'name' => $request->nome,
             'email' => $request->email,
             'password' => Hash::make('123mudar'),
         ]);
@@ -82,7 +87,7 @@ class reprogramadorController extends Controller
         $reprogramador->save();
 
         // redirecionar para a página inicial
-        Alert::toast('reprogramador Registado Com Sucesso', 'success');
+        
 
         return redirect('/reprogramadores');
     }

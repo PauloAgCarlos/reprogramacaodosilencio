@@ -81,13 +81,13 @@ Route::post('/salvar_consulta', 'App\Http\Controllers\consultasController@store'
 
 
 
-Route::get('/arquitos', 'App\Http\Controllers\arquitosController@index')->middleware('auth');
-Route::get('/registar_arquito', 'App\Http\Controllers\arquitosController@create')->middleware('auth');
-Route::get('/editar_arquito/{id}', 'App\Http\Controllers\arquitosController@edit')->middleware('auth');
-Route::get('/visualizar_arquito/{id}', 'App\Http\Controllers\arquitosController@show')->middleware('auth');
-Route::get('/eliminar_arquito/{id}', 'App\Http\Controllers\arquitosController@destroy')->middleware('auth');
-Route::post('/actualizar_arquito/{id}', 'App\Http\Controllers\arquitosController@update')->middleware('auth');
-Route::post('/salvar_arquito', 'App\Http\Controllers\arquitosController@store')->middleware('auth');
+Route::get('/arquitetos', 'App\Http\Controllers\arquitetosController@index')->middleware('auth');
+Route::get('/registar_arquiteto', 'App\Http\Controllers\arquitetosController@create')->middleware('auth');
+Route::get('/editar_arquiteto/{id}', 'App\Http\Controllers\arquitetosController@edit')->middleware('auth');
+Route::get('/visualizar_arquiteto/{id}', 'App\Http\Controllers\arquitetosController@show')->middleware('auth');
+Route::get('/eliminar_arquiteto/{id}', 'App\Http\Controllers\arquitetosController@destroy')->middleware('auth');
+Route::post('/actualizar_arquiteto/{id}', 'App\Http\Controllers\arquitetosController@update')->middleware('auth');
+Route::post('/salvar_arquiteto', 'App\Http\Controllers\arquitetosController@store')->middleware('auth');
 
 
 
@@ -151,13 +151,13 @@ Route::post('/salvar_configuracao', 'App\Http\Controllers\configuracoesControlle
 
 
 
-Route::get('/planoAccaos', 'App\Http\Controllers\planoAccaosController@index')->middleware('auth');
-Route::get('/registar_planoAccao', 'App\Http\Controllers\planoAccaosController@create')->middleware('auth');
-Route::get('/editar_planoAccao/{id}', 'App\Http\Controllers\planoAccaosController@edit')->middleware('auth');
-Route::get('/visualizar_planoAccao/{id}', 'App\Http\Controllers\planoAccaosController@show')->middleware('auth');
-Route::get('/eliminar_planoAccao/{id}', 'App\Http\Controllers\planoAccaosController@destroy')->middleware('auth');
-Route::post('/actualizar_planoAccao/{id}', 'App\Http\Controllers\planoAccaosController@update')->middleware('auth');
-Route::post('/salvar_planoAccao', 'App\Http\Controllers\planoAccaosController@store')->middleware('auth');
+Route::get('/planoAccaos', 'App\Http\Controllers\planoAccaoController@index')->middleware('auth');
+Route::get('/registar_planoAccao', 'App\Http\Controllers\planoAccaoController@create')->middleware('auth');
+Route::get('/editar_planoAccao/{id}', 'App\Http\Controllers\planoAccaoController@edit')->middleware('auth');
+Route::get('/visualizar_planoAccao/{id}', 'App\Http\Controllers\planoAccaoController@show')->middleware('auth');
+Route::get('/eliminar_planoAccao/{id}', 'App\Http\Controllers\planoAccaoController@destroy')->middleware('auth');
+Route::post('/actualizar_planoAccao/{id}', 'App\Http\Controllers\planoAccaoController@update')->middleware('auth');
+Route::post('/salvar_planoAccao', 'App\Http\Controllers\planoAccaoController@store')->middleware('auth');
 
 
 Route::get('/usuarios', 'App\Http\Controllers\usuariosController@index')->middleware('auth');

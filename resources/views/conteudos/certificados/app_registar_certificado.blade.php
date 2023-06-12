@@ -28,6 +28,22 @@
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="nome_treinamento" value="">
                     </div>
                     <div class="mb-4 col-5 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Aluno</label>
+                      <select name="id_aluno" class="form-control" id="">
+                        @foreach($alunos as $item)
+                        <option value="{{$item->id}}"> {{$item->nome}} </option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="mb-4 col-5 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Instrutor</label>
+                      <select name="id_instrutor" class="form-control" id="">
+                        @foreach($instrutores as $item)
+                        <option value="{{$item->id}}"> {{$item->name}} </option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Data de Conclusão</label>
                       <input type="date" class="form-control" id="dm-ecom-product-name" required name="data_conclusao" value="">
                     </div>

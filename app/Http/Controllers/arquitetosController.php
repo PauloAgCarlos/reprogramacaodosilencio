@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\DB;
 use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
+use Illuminate\Support\Facades\Hash;
 
 
-class arquitosController extends Controller
+class arquitetosController extends Controller
 {
     //
     
@@ -20,6 +21,7 @@ class arquitosController extends Controller
         $user = Auth::user();
 
         $arquitetos = Arquitetos::all();
+
 
         return view('conteudos.arquivos.app_arquivo', compact('user', 'arquitetos'));
 

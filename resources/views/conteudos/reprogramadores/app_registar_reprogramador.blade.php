@@ -40,8 +40,8 @@
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="cep" value="">
                     </div>                    
                     <div class="mb-4 col-5 inline-block">
-                      <label class="form-label" for="dm-ecom-product-name">Arquivo</label>
-                      <input type="file" class="form-control" id="dm-ecom-product-name" required name="aceita_colocar_lista_licenciado" value="">
+                      <label class="form-label" for="dm-ecom-product-name">Foto</label>
+                      <input type="file" class="form-control" name="foto" id="dm-ecom-product-name" value="">
                     </div>
                     
                     <div class="mb-4">

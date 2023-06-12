@@ -9,7 +9,7 @@ use File;
 use Illuminate\Support\Facades\Auth;
 use Alert;
 
-class condutorController extends Controller
+class condutoresController extends Controller
 {
     //
 
