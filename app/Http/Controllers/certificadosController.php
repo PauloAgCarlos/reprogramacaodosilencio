@@ -44,6 +44,7 @@ class certificadosController extends Controller
         $certificado->id_instrutor = $request->id_instrutor;
         $certificado->nome_treinamento = $request->nome_treinamento;
         $certificado->data_conclusao = $request->data_conclusao;
+        $certificado->save();
 
         // redirecionar para a página inicial
         Alert::toast('certificado Registado Com Sucesso', 'success');

@@ -51,6 +51,7 @@ class alunosController extends Controller
         $aluno->endereco_completo = $request->endereco_completo;
         $aluno->data_treinamento = $request->data_treinamento;
         $aluno->aceita_colocar_lista_licenciado = $request->aceita_colocar_lista_licenciado;
+        $aluno->save();
 
         // redirecionar para a página inicial
         Alert::toast('aluno Registado Com Sucesso', 'success');
