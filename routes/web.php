@@ -31,15 +31,6 @@ Route::get('/eliminar_cliente/{id}', 'App\Http\Controllers\clientesController@de
 Route::post('/actualizar_cliente/{id}', 'App\Http\Controllers\clientesController@update')->middleware('auth');
 Route::post('/salvar_cliente', 'App\Http\Controllers\clientesController@store')->middleware('auth');
 
-// Route::get('/pacientes', 'App\Http\Controllers\pacientesController@index')->middleware('auth');
-// Route::get('/registar_paciente', 'App\Http\Controllers\pacientesController@create')->middleware('auth');
-// Route::get('/editar_paciente/{id}', 'App\Http\Controllers\pacientesController@edit')->middleware('auth');
-// Route::get('/visualizar_paciente/{id}', 'App\Http\Controllers\pacientesController@show')->middleware('auth');
-// Route::get('/eliminar_paciente/{id}', 'App\Http\Controllers\pacientesController@destroy')->middleware('auth');
-// Route::post('/actualizar_paciente/{id}', 'App\Http\Controllers\pacientesController@update')->middleware('auth');
-// Route::post('/salvar_paciente', 'App\Http\Controllers\pacientesController@store')->middleware('auth');
-
-
 Route::get('/turmas', 'App\Http\Controllers\turmasController@index')->middleware('auth');
 Route::get('/registar_turma', 'App\Http\Controllers\turmasController@create')->middleware('auth');
 Route::get('/editar_turma/{id}', 'App\Http\Controllers\turmasController@edit')->middleware('auth');
