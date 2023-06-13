@@ -20,7 +20,6 @@ class seedsController extends Controller
 
         $seeds = seeds::all();
 
-        return $seeds;
 
     }
 
@@ -30,7 +29,6 @@ class seedsController extends Controller
         //
         $user = Auth::user();
 
-        return 'registar seed';
         // return view('conteudos.seeds.app_registar_seed', compact('user','fornecedores'));
     }
 

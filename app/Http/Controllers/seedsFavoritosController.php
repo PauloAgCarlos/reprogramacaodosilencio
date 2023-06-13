@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SeedsFavoritos;
+use App\Models\Clientes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -20,7 +21,6 @@ class seedsFavoritosController extends Controller
 
         $seedsFavoritos = SeedsFavoritos::all();
 
-        return $seedsFavoritos;
 
     }
 
@@ -29,8 +29,8 @@ class seedsFavoritosController extends Controller
     {
         //
         $user = Auth::user();
+        $clientes = Clientes::all();
 
-        return 'registar seed';
         // return view('conteudos.seedsFavoritos.app_registar_seed', compact('user','fornecedores'));
     }
 

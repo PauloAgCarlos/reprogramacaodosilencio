@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consultas;
+use App\Models\User;
+use App\Models\Alunos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -29,6 +31,9 @@ class consultasController extends Controller
         //
         $user = Auth::user();
 
+        $alunos = Alunos::all();
+        $profissionais = User::all();
+
         // return 'registar consulta';
         return view('conteudos.consultas.app_registar_consulta', compact('user'));
     }
@@ -43,6 +48,8 @@ class consultasController extends Controller
         $consulta->id_profissional = $user->id;
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
+
+
 
         // redirecionar para a página inicial
         Alert::toast('consulta Registado Com Sucesso', 'success');

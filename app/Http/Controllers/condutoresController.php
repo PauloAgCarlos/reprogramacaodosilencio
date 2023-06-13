@@ -47,7 +47,7 @@ class condutoresController extends Controller
         $condutor->rg = $request->rg;
         $condutor->cpf = $request->cpf;
         $condutor->telefone = $request->telefone;
-        $condutor->usuario_id = $request->usuario_id;
+        $condutor->usuario_id = 0;
         
 
         // Verificando se a foto é válida

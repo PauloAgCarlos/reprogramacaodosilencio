@@ -131,13 +131,13 @@ Route::post('/salvar_classe', 'App\Http\Controllers\classesController@store')->m
 
 
 
-Route::get('/seedFavoritos', 'App\Http\Controllers\seedFavoritosController@index')->middleware('auth');
-Route::get('/registar_seedFavorito', 'App\Http\Controllers\seedFavoritosController@create')->middleware('auth');
-Route::get('/editar_seedFavorito/{id}', 'App\Http\Controllers\seedFavoritosController@edit')->middleware('auth');
-Route::get('/visualizar_seedFavorito/{id}', 'App\Http\Controllers\seedFavoritosController@show')->middleware('auth');
-Route::get('/eliminar_seedFavorito/{id}', 'App\Http\Controllers\seedFavoritosController@destroy')->middleware('auth');
-Route::post('/actualizar_seedFavorito/{id}', 'App\Http\Controllers\seedFavoritosController@update')->middleware('auth');
-Route::post('/salvar_seedFavorito', 'App\Http\Controllers\seedFavoritosController@store')->middleware('auth');
+Route::get('/seedFavoritos', 'App\Http\Controllers\seedsFavoritosController@index')->middleware('auth');
+Route::get('/registar_seedFavorito', 'App\Http\Controllers\seedsFavoritosController@create')->middleware('auth');
+Route::get('/editar_seedFavorito/{id}', 'App\Http\Controllers\seedsFavoritosController@edit')->middleware('auth');
+Route::get('/visualizar_seedFavorito/{id}', 'App\Http\Controllers\seedsFavoritosController@show')->middleware('auth');
+Route::get('/eliminar_seedFavorito/{id}', 'App\Http\Controllers\seedsFavoritosController@destroy')->middleware('auth');
+Route::post('/actualizar_seedFavorito/{id}', 'App\Http\Controllers\seedsFavoritosController@update')->middleware('auth');
+Route::post('/salvar_seedFavorito', 'App\Http\Controllers\seedsFavoritosController@store')->middleware('auth');
 
 
 
