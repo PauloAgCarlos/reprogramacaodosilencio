@@ -35,14 +35,14 @@
                       <label class="form-label" for="dm-ecom-product-name">Email</label>
                       <input type="email" class="form-control" id="dm-ecom-product-name" required name="email" value="{{$cliente->email}}">
                     </div>
-                    <div class="mb-4 col-5 inline-block">
+                    <!-- <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Cep</label>
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="cep" value="{{$cliente->cep}}">
-                    </div>
-                    <div class="mb-4 col-10 inline-block">
+                    </div> -->
+                    <!-- <div class="mb-4 col-10 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Foto do cliente</label>
                       <input type="file" class="form-control" id="dm-ecom-product-name" name="foto" value="">
-                    </div>
+                    </div> -->
                     
                     <div class="mb-4">
                       <button type="submit" class="btn btn-primary">Salvar Cliente</button>

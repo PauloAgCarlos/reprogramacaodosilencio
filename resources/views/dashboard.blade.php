@@ -96,11 +96,99 @@
                     <i class="fa fa-users fa-lg text-primary"></i>
                 </div>
                 <div class="fs-1 fw-bold">2,388</div>
+                <div class="text-muted mb-3">Certificados</div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                <a class="fw-medium" href="/certificados">
+                Visualizar Certificados
+                <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-3 bg-body mx-auto my-3">
+                    <i class="fa fa-users fa-lg text-primary"></i>
+                </div>
+                <div class="fs-1 fw-bold">2,388</div>
+                <div class="text-muted mb-3">Arquitetos</div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                <a class="fw-medium" href="/arquitetos">
+                Visualizar Arquitetos
+                <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-3 bg-body mx-auto my-3">
+                    <i class="fa fa-users fa-lg text-primary"></i>
+                </div>
+                <div class="fs-1 fw-bold">2,388</div>
                 <div class="text-muted mb-3">Canal</div>
             </div>
             <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
                 <a class="fw-medium" href="/canais">
                 Visualizar Canal
+                <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-3 bg-body mx-auto my-3">
+                    <i class="fa fa-users fa-lg text-primary"></i>
+                </div>
+                <div class="fs-1 fw-bold">2,388</div>
+                <div class="text-muted mb-3">Consultas</div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                <a class="fw-medium" href="/consultas">
+                Visualizar Consultas
+                <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-3 bg-body mx-auto my-3">
+                    <i class="fa fa-users fa-lg text-primary"></i>
+                </div>
+                <div class="fs-1 fw-bold">2,388</div>
+                <div class="text-muted mb-3">Condutores</div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                <a class="fw-medium" href="/condutores">
+                Visualizar Condutores
+                <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+            <div class="block-content block-content-full flex-grow-1">
+                <div class="item rounded-3 bg-body mx-auto my-3">
+                    <i class="fa fa-users fa-lg text-primary"></i>
+                </div>
+                <div class="fs-1 fw-bold">2,388</div>
+                <div class="text-muted mb-3">Reprogramadores</div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                <a class="fw-medium" href="/reprogramadores">
+                Visualizar Reprogramadores
                 <i class="fa fa-arrow-right ms-1 opacity-25"></i>
                 </a>
             </div>

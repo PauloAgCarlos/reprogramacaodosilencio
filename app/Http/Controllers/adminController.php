@@ -66,7 +66,8 @@ class adminController extends Controller
         ->distinct()
         ->get();
 
-        return $roles_users;
+        // return $roles_users;
+        return view('');
 
     }
     public function permissions_roles(){

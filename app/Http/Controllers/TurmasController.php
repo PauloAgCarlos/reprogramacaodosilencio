@@ -64,7 +64,7 @@ class turmasController extends Controller
 
         // return $turma;
 
-        return view('conteudos.turmas.app_visualizar_turma', compact('turma'));
+        return view('conteudos.turmas.app_visualizar_turma', compact('user','turma'));
     }
 
 

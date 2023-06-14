@@ -24,7 +24,7 @@
                     @csrf
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Nome</label>
-                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="name" value="{{$consulta->nome}}">
+                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="nome" value="{{$consulta->nome}}">
                     </div>
                     
                     <div class="mb-4">

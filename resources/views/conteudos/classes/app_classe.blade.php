@@ -53,8 +53,8 @@
                         <strong>{{$item->endereco}}</strong>
                       </td>
                       <td class="text-center fs-sm">
-                      <a class="btn btn-sm btn-alt-secondary" href="/editar_classe/{{$item->id}}" data-toggle="click-ripple">
-                        <i class="fa fa-pencil-alt text-primary"></i>
+                      <a class="btn btn-sm btn-alt-secondary" href="/visualizar_classe/{{$item->id}}" data-toggle="click-ripple">
+                        <i class="fa fa-eye text-primary"></i>
                       </a>
                         <a class="btn btn-sm btn-alt-secondary" href="/eliminar_classe/{{$item->id}}">
                           <i class="fa fa-fw fa-times text-danger"></i>

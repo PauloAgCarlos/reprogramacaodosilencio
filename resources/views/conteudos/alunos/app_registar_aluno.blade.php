@@ -65,7 +65,7 @@
                     </div>
                     
                     <div class="mb-4">
-                      <button type="submit" class="btn btn-primary">Salvar Classe</button>
+                      <button type="submit" class="btn btn-primary">Salvar Aluno</button>
                     </div>
                   </form>
                 </div>

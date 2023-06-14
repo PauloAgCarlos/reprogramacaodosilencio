@@ -16,17 +16,17 @@
 
   <div class="py-2">
     <h1 class="fw-bold text-white  ">
-      {{$usuario->name}}
+      {{$certificado->nome_treinamento}}
     </h1>
   </div>
   <div style=" margin-left:73%; margin-top: -5%;">
-    <a class="btn btn-hero btn-primary" href="/editar_usuario/{{$usuario->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/editar_certificado/{{$certificado->id}}" data-toggle="click-ripple">
       <i class="fa fa-pencil-alt"></i>
     </a>
-    <a class="btn btn-hero btn-primary" href="/eliminar_usuario/{{$usuario->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/eliminar_certificado/{{$certificado->id}}" data-toggle="click-ripple">
       <i class="fa fa-trash" ></i>
     </a>
-    <a class="btn  btn-hero btn-primary my-2" href="/usuarios">
+    <a class="btn  btn-hero btn-primary my-2" href="/certificados">
       <i class="fa fa-reply" aria-hidden="true"></i>
       <span class="d-none d-sm-inline ms-1"></span>
     </a>
@@ -44,14 +44,16 @@
               <h3 class="block-title text-center">Dados Gerais</h3>
             </div>
             <div class="block-content">
-              <div class="fs-4 mb-1"> {{$usuario->endereco_cep}}</div>
-                <address class="fs-sm">
-                Nome: {{$usuario->name}}<br>
-                Endereço de Email: {{$usuario->endereco}}<br>
-                Bairro: {{$usuario->bairro_endereco}}<br>
-                Cidade: {{$usuario->cidade_endereco}}<br>
-                Estado: {{$usuario->estado_endereco}}<br>
-              </address>
+              <div class="fs-4 mb-1"> {{$certificado->endereco_cep}}</div>
+              <!-- <address class="fs-sm">
+                Email: {{$certificado->email}}<br>
+                CPF: {{$certificado->cpf}}<br>
+                RG: {{$certificado->rg}}<br>
+                Complemento: {{$certificado->endereco_completo}}<br>
+                Whatsapp: {{$certificado->whatsapp}}<br>
+                Data Treinamento: {{$certificado->data_treinamento}}<br>
+                Aceita Colocar Lista Licenciado: {{$certificado->aceita_colocar_lista_licenciado}}<br>
+              </address> -->
             </div>
           </div>
         </div>
@@ -63,13 +65,21 @@
           <table class="table table-borderless table-striped">
             <tbody>
               <tr>
+                <td>
+                  <span class="text-warning">
+                    <i class="fa fa-fw fa-star"></i>
+                  </span>
+                  <span class="fw-medium text-muted">Data de Nascimento: {{$certificado->data_nascimento}}</span>
+                </td>
+              </tr>
+              <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($usuario->created_at))}}
+                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($certificado->created_at))}}
                 </td> 
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($usuario->updated_at))}}
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($certificado->updated_at))}}
                 </td>
               </tr>
             </tbody>

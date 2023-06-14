@@ -16,17 +16,17 @@
 
   <div class="py-2">
     <h1 class="fw-bold text-white  ">
-      {{$cliente->nome}}
+      {{$turma->nome}}
     </h1>
   </div>
   <div style=" margin-left:73%; margin-top: -5%;">
-    <a class="btn btn-hero btn-primary" href="/editar_cliente/{{$cliente->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/editar_turma/{{$turma->id}}" data-toggle="click-ripple">
       <i class="fa fa-pencil-alt"></i>
     </a>
-    <a class="btn btn-hero btn-primary" href="/eliminar_cliente/{{$cliente->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/eliminar_turma/{{$turma->id}}" data-toggle="click-ripple">
       <i class="fa fa-trash" ></i>
     </a>
-    <a class="btn  btn-hero btn-primary my-2" href="/clientes">
+    <a class="btn  btn-hero btn-primary my-2" href="/turmas">
       <i class="fa fa-reply" aria-hidden="true"></i>
       <span class="d-none d-sm-inline ms-1"></span>
     </a>
@@ -44,13 +44,13 @@
               <h3 class="block-title text-center">Dados Gerais</h3>
             </div>
             <div class="block-content">
-              <!-- <div class="fs-4 mb-1"> {{$cliente->endereco_cep}}</div> -->
+              <!-- <div class="fs-4 mb-1"> {{$turma->endereco_cep}}</div> -->
               <!-- <address class="fs-sm">
-                Endereço: {{$cliente->endereco}}, {{$cliente->numero_endereco}} <br>
-                Complemento: {{$cliente->complemento_endereco}}<br>
-                Bairro: {{$cliente->bairro_endereco}}<br>
-                Cidade: {{$cliente->cidade_endereco}}<br>
-                Estado: {{$cliente->estado_endereco}}<br>
+                Endereço: {{$turma->endereco}}, {{$turma->numero_endereco}} <br>
+                Complemento: {{$turma->complemento_endereco}}<br>
+                Bairro: {{$turma->bairro_endereco}}<br>
+                Cidade: {{$turma->cidade_endereco}}<br>
+                Estado: {{$turma->estado_endereco}}<br>
               </address> -->
             </div>
           </div>
@@ -67,17 +67,17 @@
                   <span class="text-warning">
                     <i class="fa fa-fw fa-star"></i>
                   </span>
-                  <span class="fw-medium text-muted">Data de Nascimento: {{$cliente->data_nascimento}}</span>
+                  <span class="fw-medium text-muted">Data de Nascimento: {{$turma->data_nascimento}}</span>
                 </td>
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($cliente->created_at))}}
+                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($turma->created_at))}}
                 </td> 
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($cliente->updated_at))}}
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($turma->updated_at))}}
                 </td>
               </tr>
             </tbody>

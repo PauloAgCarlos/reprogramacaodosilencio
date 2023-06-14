@@ -70,8 +70,10 @@ class certificadosController extends Controller
         //
         $user = Auth::user();
         $certificado = Certificados::find($id);
+        $alunos = Alunos::all();
+        $instrutores = User::all();
 
-        return view('conteudos.certificados.app_editar_certificado', compact('user','certificado'));
+        return view('conteudos.certificados.app_editar_certificado', compact('user','certificado','alunos','instrutores'));
     }
 
         public function update(Request $request, $id)

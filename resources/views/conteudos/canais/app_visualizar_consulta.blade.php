@@ -16,17 +16,17 @@
 
   <div class="py-2">
     <h1 class="fw-bold text-white  ">
-      {{$aluno->nome}}
+      {{$consulta->nome}}
     </h1>
   </div>
   <div style=" margin-left:73%; margin-top: -5%;">
-    <a class="btn btn-hero btn-primary" href="/editar_aluno/{{$aluno->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/editar_canal/{{$consulta->id}}" data-toggle="click-ripple">
       <i class="fa fa-pencil-alt"></i>
     </a>
-    <a class="btn btn-hero btn-primary" href="/eliminar_aluno/{{$aluno->id}}" data-toggle="click-ripple">
+    <a class="btn btn-hero btn-primary" href="/eliminar_canal/{{$consulta->id}}" data-toggle="click-ripple">
       <i class="fa fa-trash" ></i>
     </a>
-    <a class="btn  btn-hero btn-primary my-2" href="/alunos">
+    <a class="btn  btn-hero btn-primary my-2" href="/canais">
       <i class="fa fa-reply" aria-hidden="true"></i>
       <span class="d-none d-sm-inline ms-1"></span>
     </a>
@@ -44,15 +44,13 @@
               <h3 class="block-title text-center">Dados Gerais</h3>
             </div>
             <div class="block-content">
-              <div class="fs-4 mb-1"> {{$aluno->endereco_cep}}</div>
-              <address class="fs-sm">
-                Email: {{$aluno->email}}<br>
-                CPF: {{$aluno->cpf}}<br>
-                RG: {{$aluno->rg}}<br>
-                Complemento: {{$aluno->endereco_completo}}<br>
-                Whatsapp: {{$aluno->whatsapp}}<br>
-                Data Treinamento: {{$aluno->data_treinamento}}<br>
-                Aceita Colocar Lista Licenciado: {{$aluno->aceita_colocar_lista_licenciado}}<br>
+              <div class="fs-4 mb-1"> {{$consulta->endereco_cep}}</div>
+                <address class="fs-sm">
+                Nome: {{$consulta->name}}<br>
+                Endereço de Email: {{$consulta->endereco}}<br>
+                Bairro: {{$consulta->bairro_endereco}}<br>
+                Cidade: {{$consulta->cidade_endereco}}<br>
+                Estado: {{$consulta->estado_endereco}}<br>
               </address>
             </div>
           </div>
@@ -65,21 +63,13 @@
           <table class="table table-borderless table-striped">
             <tbody>
               <tr>
-                <td>
-                  <span class="text-warning">
-                    <i class="fa fa-fw fa-star"></i>
-                  </span>
-                  <span class="fw-medium text-muted">Data de Nascimento: {{$aluno->data_nascimento}}</span>
-                </td>
-              </tr>
-              <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($aluno->created_at))}}
+                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($consulta->created_at))}}
                 </td> 
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($aluno->updated_at))}}
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($consulta->updated_at))}}
                 </td>
               </tr>
             </tbody>

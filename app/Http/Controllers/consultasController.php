@@ -35,7 +35,7 @@ class consultasController extends Controller
         $profissionais = User::all();
 
         // return 'registar consulta';
-        return view('conteudos.consultas.app_registar_consulta', compact('user'));
+        return view('conteudos.consultas.app_registar_consulta', compact('user', 'alunos', 'profissionais'));
     }
 
     public function store(Request $request)
@@ -49,6 +49,7 @@ class consultasController extends Controller
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
 
+        $consulta->save();
 
 
         // redirecionar para a página inicial
@@ -72,9 +73,10 @@ class consultasController extends Controller
     {
         //
         $user = Auth::user();
+        $alunos = Alunos::all();
         $consulta = consultas::find($id);
 
-        return view('conteudos.consultas.app_editar_consulta', compact('user','consulta'));
+        return view('conteudos.consultas.app_editar_consulta', compact('user', 'alunos', 'consulta'));
     }
 
         public function update(Request $request, $id)
@@ -83,7 +85,6 @@ class consultasController extends Controller
 
         $consulta = consultas::find($id);
         $consulta->id_aluno = $request->id_aluno;
-        $consulta->id_profissional = $request->id_profissional;
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
 

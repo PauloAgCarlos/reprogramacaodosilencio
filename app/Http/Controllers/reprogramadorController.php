@@ -121,7 +121,7 @@ class reprogramadorController extends Controller
         $reprogramador->data_nascimento = $request->data_nascimento;
         $reprogramador->email = $request->email;
         $reprogramador->cep = $request->cep;
-        $reprogramador->usuario_id = $request->usuario_id;
+        // $reprogramador->usuario_id = $request->usuario_id;
 
         // Verificando se a foto é válida
         if ($request->foto) {

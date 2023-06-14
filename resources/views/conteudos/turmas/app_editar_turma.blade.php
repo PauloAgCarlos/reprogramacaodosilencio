@@ -29,11 +29,11 @@
                     </div>
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Email</label>
-                      <input type="email" class="form-control" id="dm-ecom-product-name" required name="nome" value="{{$turma->email}}">
+                      <input type="email" class="form-control" id="dm-ecom-product-name" required name="email" value="{{$turma->email}}">
                     </div>
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">CEP</label>
-                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="nome" value="{{$turma->cep}}">
+                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="cep" value="{{$turma->cep}}">
                     </div>
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Data Inicio</label>

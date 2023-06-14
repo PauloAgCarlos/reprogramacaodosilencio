@@ -34,7 +34,7 @@ class arquitetosController extends Controller
         $user = Auth::user();
 
         // return 'registar arquiteto';
-        return view('conteudos.arquitetos.app_registar_arquiteto', compact('user'));
+        return view('conteudos.arquivos.app_registar_arquivo', compact('user'));
     }
 
     public function store(Request $request)
@@ -48,6 +48,8 @@ class arquitetosController extends Controller
         $arquiteto->email = $request->email;
         $arquiteto->cep = $request->cep;
         $arquiteto->usuario_id = 0;
+
+        
         
 
         // Verificando se a foto é válida
