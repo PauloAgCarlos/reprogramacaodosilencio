@@ -59,10 +59,10 @@
                         </a>
                       </td>
                       <td class="text-center fs-sm">
-                      <a class="btn btn-sm btn-alt-secondary" href="/visualizar_aluno/{{$item->id}}" data-toggle="click-ripple">
+                      <a class="btn btn-sm btn-alt-secondary" href="/visualizar_arquiteto/{{$item->id}}" data-toggle="click-ripple">
                         <i class="fa fa-eye text-primary"></i>
                       </a>
-                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_aluno/{{$item->id}}">
+                        <a class="btn btn-sm btn-alt-secondary" href="/eliminar_arquiteto/{{$item->id}}">
                           <i class="fa fa-fw fa-times text-danger"></i>
                         </a>
                       </td>

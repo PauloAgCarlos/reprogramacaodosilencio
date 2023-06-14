@@ -98,7 +98,7 @@ class arquitetosController extends Controller
         $user = Auth::user();
         $arquiteto = Arquitetos::find($id);
 
-        return view('conteudos.arquitetos.app_visualizar_arquiteto', compact('user','arquiteto'));
+        return view('conteudos.arquivos.app_visualizar_arquivo', compact('user','arquiteto'));
     }
 
 
@@ -108,7 +108,7 @@ class arquitetosController extends Controller
         $user = Auth::user();
         $arquiteto = Arquitetos::find($id);
 
-        return view('conteudos.arquitetos.app_editar_arquiteto', compact('user','arquiteto'));
+        return view('conteudos.arquivos.app_editar_arquivo', compact('user','arquiteto'));
     }
 
         public function update(Request $request, $id)
@@ -120,7 +120,7 @@ class arquitetosController extends Controller
         $arquiteto->data_nascimento = $request->data_nascimento;
         $arquiteto->email = $request->email;
         $arquiteto->cep = $request->cep;
-        $arquiteto->usuario_id = $request->usuario_id;
+        // $arquiteto->usuario_id = $request->usuario_id;
 
         // Verificando se a foto é válida
         if ($request->foto) {
