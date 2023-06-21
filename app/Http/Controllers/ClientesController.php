@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Clientes;
+use App\Models\Consultas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
@@ -21,7 +22,6 @@ class clientesController extends Controller
         $clientes = Clientes::all();
 
         return view('conteudos.clientes.app_clientes', compact('user','clientes'));
-
     }
 
 
@@ -42,6 +42,7 @@ class clientesController extends Controller
         $cliente->nome = $request->nome;
         $cliente->data_nascimento = $request->data_nascimento;
         $cliente->email = $request->email;
+        $cliente->whatsapp = $request->whatsapp;
         $cliente->id_profissional = $user->id;
 
         $cliente->save();
@@ -49,7 +50,13 @@ class clientesController extends Controller
         // redirecionar para a página inicial
         Alert::toast('cliente Registado Com Sucesso', 'success');
 
+        if (isset($request->check_marcar_consulta)) {
+            return redirect('/registar_consulta_por_cliente/'.$cliente->id);
+         }
+
+
         return redirect('/clientes');
+
     }
 
 
@@ -58,9 +65,14 @@ class clientesController extends Controller
     {
         $user = Auth::user();
         $cliente = Clientes::find($id);
+        $consultas = Consultas::where('id_cliente', $id)
+                    ->join('clientes', 'clientes.id','consultas.id_cliente')
+                    ->join('users', 'users.id','consultas.id_profissional')
+                    ->select('consultas.*','clientes.nome as nome_cliente','users.name as nome_profissional')
+                    ->get();
 
 
-        return view('conteudos.clientes.app_visualizar_cliente', compact('cliente','user'));
+        return view('conteudos.clientes.app_visualizar_cliente', compact('cliente','user','consultas'));
     }
 
 
@@ -80,8 +92,9 @@ class clientesController extends Controller
         $cliente = Clientes::find($id);
         $cliente->nome = $request->nome;
         $cliente->data_nascimento = $request->data_nascimento;
+        $cliente->whatsapp = $request->whatsapp;
         $cliente->email = $request->email;
- 
+
 
         $cliente->save();
 

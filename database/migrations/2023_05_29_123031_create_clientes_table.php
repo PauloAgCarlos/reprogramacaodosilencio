@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateClientesTable extends Migration
 {
-    
+
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
@@ -14,6 +14,7 @@ class CreateClientesTable extends Migration
             $table->string('nome');
             $table->string('data_nascimento');
             $table->string('email');
+            $table->string('whatsapp');
             $table->integer('id_profissional');
             $table->timestamps();
 

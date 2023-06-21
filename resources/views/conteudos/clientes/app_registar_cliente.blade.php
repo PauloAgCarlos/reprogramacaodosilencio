@@ -11,7 +11,7 @@
   </div>
   @endif
 </center>
- 
+
 
           <!-- Info -->
           <div class="block block-rounded">
@@ -35,7 +35,20 @@
                       <label class="form-label" for="dm-ecom-product-name">Email</label>
                       <input type="email" class="form-control" id="dm-ecom-product-name" required name="email" value="">
                     </div>
-                    
+                    <div class="mb-4 col-5 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Whatsapp</label>
+                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="whatsapp" value="">
+                    </div>
+
+                    <div class="mb-4 col-5 inline-block form-group">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck" name="check_marcar_consulta" checked="true">
+                        <label class="form-check-label" for="gridCheck">
+                            Adicionar Primeira Consulta
+                        </label>
+                        </div>
+                    </div>
+
                     <div class="mb-4">
                       <button type="submit" class="btn btn-primary">Salvar Cliente</button>
                     </div>
@@ -46,5 +59,5 @@
           </div>
           <!-- END Info -->
 
-            
+
 @endsection

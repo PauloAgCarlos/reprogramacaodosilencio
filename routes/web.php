@@ -73,6 +73,7 @@ Route::post('/salvar_certificado', 'App\Http\Controllers\certificadosController@
 
 Route::get('/consultas', 'App\Http\Controllers\consultasController@index')->middleware('auth');
 Route::get('/registar_consulta', 'App\Http\Controllers\consultasController@create')->middleware('auth');
+Route::get('/registar_consulta_por_cliente/{id}', 'App\Http\Controllers\consultasController@create_por_cliente')->middleware('auth');
 Route::get('/editar_consulta/{id}', 'App\Http\Controllers\consultasController@edit')->middleware('auth');
 Route::get('/visualizar_consulta/{id}', 'App\Http\Controllers\consultasController@show')->middleware('auth');
 Route::get('/eliminar_consulta/{id}', 'App\Http\Controllers\consultasController@destroy')->middleware('auth');
@@ -168,5 +169,5 @@ Route::get('/eliminar_usuario/{id}', 'App\Http\Controllers\usuariosController@de
 Route::post('/actualizar_usuario/{id}', 'App\Http\Controllers\usuariosController@update')->middleware('auth');
 Route::post('/salvar_usuario', 'App\Http\Controllers\usuariosController@store')->middleware('auth');
 
- 
+
 require __DIR__.'/auth.php';

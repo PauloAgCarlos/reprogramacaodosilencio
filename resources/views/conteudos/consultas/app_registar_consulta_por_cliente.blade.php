@@ -28,15 +28,13 @@
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="descricao" value="">
                     </div>
                     <div class="mb-4 col-5 inline-block">
-                      <label class="form-label" for="dm-ecom-product-name">Data Conclusão</label>
+                      <label class="form-label" for="dm-ecom-product-name">Data de Consulta</label>
                       <input type="date" class="form-control" id="dm-ecom-product-name" required name="data_consulta" value="">
                     </div>
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Cliente</label>
                       <select class="form-control" name="id_cliente" id="">
-                        @foreach($clientes as $item_cliente)
-                          <option value="{{$item_cliente->id}}">{{$item_cliente->nome}}</option>
-                        @endforeach
+                          <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
                       </select>
                     </div>
 

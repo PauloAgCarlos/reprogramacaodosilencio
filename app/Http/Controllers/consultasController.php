@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Consultas;
 use App\Models\User;
+use App\Models\Clientes;
 use App\Models\Alunos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class consultasController extends Controller
     //
     public function index()
     {
-        //  
+        //
         $user = Auth::user();
 
         $consultas = Consultas::all();
@@ -31,11 +32,23 @@ class consultasController extends Controller
         //
         $user = Auth::user();
 
-        $alunos = Alunos::all();
+        $clientes = Clientes::all();
         $profissionais = User::all();
 
         // return 'registar consulta';
-        return view('conteudos.consultas.app_registar_consulta', compact('user', 'alunos', 'profissionais'));
+        return view('conteudos.consultas.app_registar_consulta', compact('user', 'clientes', 'profissionais'));
+    }
+
+    public function create_por_cliente($id)
+    {
+        //
+        $user = Auth::user();
+
+        $cliente = Clientes::find($id);
+        $profissionais = User::all();
+
+        // return 'registar consulta';
+        return view('conteudos.consultas.app_registar_consulta_por_cliente', compact('user', 'cliente', 'profissionais'));
     }
 
     public function store(Request $request)
@@ -44,7 +57,7 @@ class consultasController extends Controller
         $user = Auth::user();
 
         $consulta = new Consultas;
-        $consulta->id_aluno = $request->id_aluno;
+        $consulta->id_cliente = $request->id_cliente;
         $consulta->id_profissional = $user->id;
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
@@ -63,7 +76,7 @@ class consultasController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $consulta = consultas::find($id);
+        $consulta = Consultas::find($id);
 
         return view('conteudos.consultas.app_visualizar_consulta', compact('user','consulta'));
     }
@@ -73,17 +86,17 @@ class consultasController extends Controller
     {
         //
         $user = Auth::user();
-        $alunos = Alunos::all();
+        $clientes = Clientes::all();
         $consulta = consultas::find($id);
 
-        return view('conteudos.consultas.app_editar_consulta', compact('user', 'alunos', 'consulta'));
+        return view('conteudos.consultas.app_editar_consulta', compact('user', 'clientes', 'consulta'));
     }
 
         public function update(Request $request, $id)
     {
         //
 
-        $consulta = consultas::find($id);
+        $consulta = Consultas::find($id);
         $consulta->id_aluno = $request->id_aluno;
         $consulta->descricao = $request->descricao;
         $consulta->data_consulta = $request->data_consulta;
