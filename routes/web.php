@@ -113,9 +113,11 @@ Route::post('/salvar_condutor', 'App\Http\Controllers\condutoresController@store
 
 
 Route::get('/canais', 'App\Http\Controllers\canaisController@index')->middleware('auth');
+Route::get('/canais_pendentes', 'App\Http\Controllers\canaisController@pendentes')->middleware('auth');
 Route::get('/registar_canal', 'App\Http\Controllers\canaisController@create')->middleware('auth');
 Route::get('/editar_canal/{id}', 'App\Http\Controllers\canaisController@edit')->middleware('auth');
 Route::get('/visualizar_canal/{id}', 'App\Http\Controllers\canaisController@show')->middleware('auth');
+Route::get('/aprovar_canal/{id}', 'App\Http\Controllers\canaisController@aprovar')->middleware('auth');
 Route::get('/eliminar_canal/{id}', 'App\Http\Controllers\canaisController@destroy')->middleware('auth');
 Route::post('/actualizar_canal/{id}', 'App\Http\Controllers\canaisController@update')->middleware('auth');
 Route::post('/salvar_canal', 'App\Http\Controllers\canaisController@store')->middleware('auth');

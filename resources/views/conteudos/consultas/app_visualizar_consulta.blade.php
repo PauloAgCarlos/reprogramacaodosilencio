@@ -11,12 +11,12 @@
   @endif
 </center>
 
- 
+
 <div class="container  bg-dark text-center" style="margin-top: 5%;">
 
   <div class="py-2">
     <h1 class="fw-bold text-white  ">
-      {{$consulta->descricao}}
+      Detalhes da Consulta
     </h1>
   </div>
   <div style=" margin-left:73%; margin-top: -5%;">
@@ -32,7 +32,7 @@
     </a>
   </div>
 </div>
- 
+
   <!-- Meta -->
   <div class="row items-push">
     <div class="col-md-6">
@@ -41,19 +41,11 @@
         <div class="block-content block-content-full ">
           <div class="block block-rounded">
             <div class="block-header block-header-default">
-              <h3 class="block-title text-center">Dados Gerais</h3>
+              <h3 class="block-title text-center">Descrição</h3>
             </div>
             <div class="block-content">
-              <div class="fs-4 mb-1"> {{$consulta->endereco_cep}}</div>
-              <address class="fs-sm">
-                Email: {{$consulta->email}}<br>
-                CPF: {{$consulta->cpf}}<br>
-                RG: {{$consulta->rg}}<br>
-                Complemento: {{$consulta->endereco_completo}}<br>
-                Whatsapp: {{$consulta->whatsapp}}<br>
-                Data Treinamento: {{$consulta->data_treinamento}}<br>
-                Aceita Colocar Lista Licenciado: {{$consulta->aceita_colocar_lista_licenciado}}<br>
-              </address>
+              <div class="fs-4 mb-1"> {{$consulta->descricao}}</div>
+
             </div>
           </div>
         </div>
@@ -69,14 +61,20 @@
                   <span class="text-warning">
                     <i class="fa fa-fw fa-star"></i>
                   </span>
-                  <span class="fw-medium text-muted">Data de Nascimento: {{$consulta->data_nascimento}}</span>
+                  <span class="fw-medium text-muted">Cliente: {{$consulta->nome_cliente}}</span>
                 </td>
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($consulta->created_at))}}
-                </td> 
+                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Profissional: {{ $consulta->nome_profissional }}
+                </td>
               </tr>
+              <tr>
+                <td class="fw-medium text-muted">
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data da Consulta: {{date ('d-m-Y', strtotime($consulta->data_consulta))}}
+                </td>
+              </tr>
+
               <tr>
                 <td class="fw-medium text-muted">
                   <i class="fa fa-fw fa-calendar me-1"></i> Data de Atualização: {{date ('d-m-Y', strtotime($consulta->updated_at))}}
@@ -89,7 +87,7 @@
     </div>
   </div>
   <!-- END Meta -->
- 
+
 
 
 @endsection

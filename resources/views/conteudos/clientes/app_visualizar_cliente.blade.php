@@ -41,17 +41,45 @@
         <div class="block-content block-content-full ">
           <div class="block block-rounded">
             <div class="block-header block-header-default">
-              <h3 class="block-title text-center">Dados Gerais</h3>
+              <h3 class="block-title text-center">Última Consulta</h3>
             </div>
             <div class="block-content">
-              <!-- <div class="fs-4 mb-1"> {{$cliente->endereco_cep}}</div> -->
-              <!-- <address class="fs-sm">
-                Endereço: {{$cliente->endereco}}, {{$cliente->numero_endereco}} <br>
-                Complemento: {{$cliente->complemento_endereco}}<br>
-                Bairro: {{$cliente->bairro_endereco}}<br>
-                Cidade: {{$cliente->cidade_endereco}}<br>
-                Estado: {{$cliente->estado_endereco}}<br>
-              </address> -->
+              <!-- All Orders Table -->
+              <div class="table-responsive">
+                <table class="table table-borderless table-striped table-vcenter fs-sm">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 100px;">ID</th>
+                      <th class="d-none d-xl-table-cell">Profissional</th>
+                      <th class="d-none d-xl-table-cell text-center">Data de Consulta</th>
+                      <th class="text-center">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">
+                        <a>
+                          <strong> {{$ultima_consulta->id}} </strong>
+                        </a>
+                      </td>
+                      <td class="d-none d-xl-table-cell">
+                        <a>{{$ultima_consulta->nome_profissional}}</a>
+                      </td>
+                      <td class="d-none d-xl-table-cell text-center">
+                        <a>{{$ultima_consulta->data_consulta}}</a>
+                      </td>
+                      <td class="text-center fs-base">
+                        <a class="btn btn-sm btn-alt-secondary" href="/visualizar_consulta/{{$ultima_consulta->id}}">
+                          <i class="fa fa-fw fa-eye"></i>
+                        </a>
+
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- END All Orders Table -->
             </div>
           </div>
         </div>

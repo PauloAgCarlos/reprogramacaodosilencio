@@ -16,6 +16,9 @@ class CreateCanaisTable extends Migration
         Schema::create('canais', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('url');
+            $table->string('tema_principal');
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

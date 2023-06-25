@@ -11,7 +11,7 @@
   </div>
   @endif
 </center>
- 
+
 
           <!-- Info -->
           <div class="block block-rounded">
@@ -24,12 +24,20 @@
                   <form action="/salvar_canal" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4 col-5 inline-block">
-                      <label class="form-label" for="dm-ecom-product-name">Nome</label>
+                      <label class="form-label" for="dm-ecom-product-name">Nome do Canal</label>
                       <input type="text" class="form-control" id="dm-ecom-product-name" required name="nome" value="">
                     </div>
-                    
+                    <div class="mb-4 col-5 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Url</label>
+                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="url" value="">
+                    </div>
+                    <div class="mb-4 col-5 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Tema Principal</label>
+                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="tema_principal" value="">
+                    </div>
+
                     <div class="mb-4">
-                      <button type="submit" class="btn btn-primary">Salvar Consulta</button>
+                      <button type="submit" class="btn btn-primary">Salvar Canal</button>
                     </div>
                   </form>
                 </div>
@@ -38,5 +46,5 @@
           </div>
           <!-- END Info -->
 
-            
+
 @endsection

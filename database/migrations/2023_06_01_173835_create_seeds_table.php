@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSeedsTable extends Migration
 {
-    
+
     public function up()
     {
         Schema::create('seeds', function (Blueprint $table) {
@@ -15,7 +15,8 @@ class CreateSeedsTable extends Migration
             $table->string('tema_principal');
             $table->string('sips');
             $table->string('outras_palavras');
-            $table->integer('status')->default(0);
+            $table->integer('id_cliente');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

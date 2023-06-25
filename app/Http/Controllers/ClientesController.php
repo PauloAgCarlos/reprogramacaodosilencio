@@ -71,8 +71,15 @@ class clientesController extends Controller
                     ->select('consultas.*','clientes.nome as nome_cliente','users.name as nome_profissional')
                     ->get();
 
+        $ultima_consulta = Consultas::where('id_cliente', $id)
+                    ->join('clientes', 'clientes.id','consultas.id_cliente')
+                    ->join('users', 'users.id','consultas.id_profissional')
+                    ->select('consultas.*','clientes.nome as nome_cliente','users.name as nome_profissional')
+                    ->latest()
+                    ->first();
 
-        return view('conteudos.clientes.app_visualizar_cliente', compact('cliente','user','consultas'));
+
+        return view('conteudos.clientes.app_visualizar_cliente', compact('cliente','user','consultas','ultima_consulta'));
     }
 
 

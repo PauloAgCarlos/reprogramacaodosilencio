@@ -76,7 +76,12 @@ class consultasController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $consulta = Consultas::find($id);
+
+        $consulta = Consultas::where('consultas.id', $id)
+                    ->join('clientes', 'clientes.id','consultas.id_cliente')
+                    ->join('users', 'users.id','consultas.id_profissional')
+                    ->select('consultas.*','clientes.nome as nome_cliente','users.name as nome_profissional')
+                    ->first();
 
         return view('conteudos.consultas.app_visualizar_consulta', compact('user','consulta'));
     }

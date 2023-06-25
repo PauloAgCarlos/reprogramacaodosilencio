@@ -16,13 +16,22 @@ class canaisController extends Controller
 
     public function index()
     {
-        //  
+        //
         $user = Auth::user();
 
-        $canais = Canais::all();
+        $canais = Canais::where('status', 1)->get();
 
-        return view('conteudos.canais.app_consulta', compact('user', 'canais'));
+        return view('conteudos.canais.app_canais', compact('user', 'canais'));
+    }
 
+    public function pendentes()
+    {
+        //
+        $user = Auth::user();
+
+        $canais = Canais::where('status', 0)->get();
+
+        return view('conteudos.canais.app_canais_pendentes', compact('user', 'canais'));
     }
 
 
@@ -31,8 +40,8 @@ class canaisController extends Controller
         //
         $user = Auth::user();
 
-        // return 'registar consulta';
-        return view('conteudos.canais.app_registar_consulta', compact('user'));
+        // return 'registar canal';
+        return view('conteudos.canais.app_registar_canal', compact('user'));
     }
 
     public function store(Request $request)
@@ -40,12 +49,14 @@ class canaisController extends Controller
         //
         $user = Auth::user();
 
-        $consulta = new Canais;
-        $consulta->nome = $request->nome;
-        $consulta->save();
+        $canal = new Canais;
+        $canal->nome = $request->nome;
+        $canal->url = $request->url;
+        $canal->tema_principal = $request->tema_principal;
+        $canal->save();
 
         // redirecionar para a página inicial
-        Alert::toast('consulta Registado Com Sucesso', 'success');
+        Alert::toast('canal Registado Com Sucesso', 'success');
 
         return redirect('/canais');
     }
@@ -55,9 +66,20 @@ class canaisController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $consulta = Canais::find($id);
+        $canal = Canais::find($id);
 
-        return view('conteudos.canais.app_visualizar_consulta', compact('user','consulta'));
+        return view('conteudos.canais.app_visualizar_canal', compact('user','canal'));
+    }
+
+    public function aprovar($id)
+    {
+        $user = Auth::user();
+        $canal = Canais::find($id);
+        $canal->status = 1;
+        $canal->save();
+
+        Alert::toast('Canal Aprovado Com Sucesso', 'success');
+        return back();
     }
 
 
@@ -65,19 +87,19 @@ class canaisController extends Controller
     {
         //
         $user = Auth::user();
-        $consulta = Canais::find($id);
+        $canal = Canais::find($id);
 
-        return view('conteudos.canais.app_editar_consulta', compact('user','consulta'));
+        return view('conteudos.canais.app_editar_canal', compact('user','canal'));
     }
 
     public function update(Request $request, $id)
     {
         //
 
-        $consulta = Canais::find($id);
-        $consulta->nome = $request->nome;
+        $canal = Canais::find($id);
+        $canal->nome = $request->nome;
 
-        $consulta->save();
+        $canal->save();
 
         // redirecionar para a página inicial
         Alert::toast('Registo Actualizado Com Sucesso', 'success');

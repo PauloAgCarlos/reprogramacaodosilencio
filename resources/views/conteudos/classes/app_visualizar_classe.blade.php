@@ -11,7 +11,7 @@
   @endif
 </center>
 
- 
+
 <div class="container  bg-dark text-center" style="margin-top: 5%;">
 
   <div class="py-2">
@@ -32,7 +32,7 @@
     </a>
   </div>
 </div>
- 
+
   <!-- Meta -->
   <div class="row items-push">
     <div class="col-md-6">
@@ -45,13 +45,13 @@
             </div>
             <div class="block-content">
               <!-- <div class="fs-4 mb-1"> {{$classe->endereco_cep}}</div> -->
-              <!-- <address class="fs-sm">
-                Endereço: {{$classe->endereco}}, {{$classe->numero_endereco}} <br>
-                Complemento: {{$classe->complemento_endereco}}<br>
-                Bairro: {{$classe->bairro_endereco}}<br>
-                Cidade: {{$classe->cidade_endereco}}<br>
-                Estado: {{$classe->estado_endereco}}<br>
-              </address> -->
+              <address class="fs-sm">
+                CEP: {{$classe->cep}} <br>
+                Complemento: {{$classe->complemento}}<br>
+                Número: {{$classe->numero}}<br>
+                Site: {{$classe->site}}<br>
+                Whatsapp: {{$classe->whatsapp}}<br>
+              </address>
             </div>
           </div>
         </div>
@@ -67,13 +67,23 @@
                   <span class="text-warning">
                     <i class="fa fa-fw fa-star"></i>
                   </span>
-                  <span class="fw-medium text-muted">Data de Nascimento: {{$classe->data_nascimento}}</span>
+                  <span class="fw-medium text-muted">Nível: {{$classe->nivel}}</span>
                 </td>
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
-                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($classe->created_at))}}
-                </td> 
+                  <i class="fa fa-fw fa-heart me-1 text-danger"></i> Online: {{$classe->online == 1 ? 'Sim' : 'Não' }}
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-medium text-muted">
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Início: {{date ('d-m-Y', strtotime($classe->data_inicio))}}
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-medium text-muted">
+                  <i class="fa fa-fw fa-calendar me-1"></i> Data de Cadastro: {{date ('d-m-Y', strtotime($classe->created_at))}}
+                </td>
               </tr>
               <tr>
                 <td class="fw-medium text-muted">
@@ -87,7 +97,7 @@
     </div>
   </div>
   <!-- END Meta -->
- 
+
 
 
 @endsection

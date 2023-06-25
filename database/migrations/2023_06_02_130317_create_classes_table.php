@@ -18,7 +18,12 @@ class CreateClassesTable extends Migration
             $table->string('nome');
             $table->string('data_inicio');
             $table->string('nivel');
-            $table->string('endereco');
+            $table->string('cep')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('complemento')->nullable();
+            $table->string('site')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->boolean('e_online')->default(0);
             $table->timestamps();
         });
     }

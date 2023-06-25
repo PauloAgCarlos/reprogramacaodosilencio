@@ -29,7 +29,7 @@ class seedsController extends Controller
         //
         $user = Auth::user();
 
-        // return view('conteudos.seeds.app_registar_seed', compact('user','fornecedores'));
+        return view('conteudos.seeds.app_registar_seed', compact('user'));
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class seedsController extends Controller
         $seed->tipo = $request->tipo;
 
         $seed->save();
- 
+
         // redirecionar para a página inicial
         Alert::toast('seed Registado Com Sucesso', 'success');
 

@@ -2,6 +2,12 @@
 
 @section('conteudo')
 
+<style>
+    textarea{
+        width: 100%;
+    }
+</style>
+
 <br>
 <center>
   @if (session('erro'))
@@ -23,10 +29,7 @@
                 <div class="col-md-12 col-lg-10">
                   <form action="/salvar_consulta" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-4 col-5 inline-block">
-                      <label class="form-label" for="dm-ecom-product-name">Descrição da Consulta</label>
-                      <input type="text" class="form-control" id="dm-ecom-product-name" required name="descricao" value="">
-                    </div>
+
                     <div class="mb-4 col-5 inline-block">
                       <label class="form-label" for="dm-ecom-product-name">Data de Consulta</label>
                       <input type="date" class="form-control" id="dm-ecom-product-name" required name="data_consulta" value="">
@@ -36,6 +39,10 @@
                       <select class="form-control" name="id_cliente" id="">
                           <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
                       </select>
+                    </div>
+                    <div class="mb-4 col-10 inline-block">
+                      <label class="form-label" for="dm-ecom-product-name">Descrição da Consulta</label>
+                      <textarea name="descricao" class="form-control" id="" cols="10" rows="5" required></textarea>
                     </div>
 
                     <div class="mb-4">

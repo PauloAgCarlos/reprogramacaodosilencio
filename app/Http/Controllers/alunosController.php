@@ -20,7 +20,7 @@ class alunosController extends Controller
 
         $alunos = Alunos::all();
 
-        return view('conteudos.alunos.app_aluno', compact('user', 'alunos'));
+        return view('conteudos.alunos.app_alunos', compact('user', 'alunos'));
 
     }
 
@@ -50,7 +50,13 @@ class alunosController extends Controller
         $aluno->genero = $request->genero;
         $aluno->endereco_completo = $request->endereco_completo;
         $aluno->data_treinamento = $request->data_treinamento;
-        $aluno->aceita_colocar_lista_licenciado = $request->aceita_colocar_lista_licenciado;
+        if($request->aceita_colocar_lista_licenciado){
+            $aluno->aceita_colocar_lista_licenciado = 1;
+        }
+        else{
+            $aluno->aceita_colocar_lista_licenciado = 0;
+        }
+
         $aluno->save();
 
         // redirecionar para a página inicial

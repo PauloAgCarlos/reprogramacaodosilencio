@@ -12,18 +12,18 @@
   @endif
 </center>
 
- 
+
 <!-- Latest Friends -->
 <h2 class="content-heading">
         Listagem de Canais
           </h2>
- 
+
           <div class="table-responsive">
             <thead>
                     <table class="table table-borderless table-striped table-vcenter">
                     <tr>
                       <th class="text-center" style="width: 100px;">ID</th>
-                      <th class="d-none d-sm-table-cell text-center">Nome</th> 
+                      <th class="d-none d-sm-table-cell text-center">Nome</th>
                       <th class="text-center">Acções</th>
                     </tr>
                   </thead>
@@ -36,7 +36,11 @@
                           <strong> {{$item->id}} </strong>
                         </a>
                       </td>
-                      <td class="d-none d-sm-table-cell text-center fs-sm"> {{$item->nome}}   </td>
+                      <td class="d-none d-sm-table-cell text-center fs-sm">
+                            <a class="fw-semibold" href="/visualizar_canal/{{$item->id}}">
+                                {{$item->nome}}
+                            </a>
+                        </td>
                       <td class="text-center fs-sm">
                       <a class="btn btn-sm btn-alt-secondary" href="/visualizar_canal/{{$item->id}}" data-toggle="click-ripple">
                         <i class="fa fa-eye text-primary"></i>
@@ -47,8 +51,8 @@
                       </td>
                     </tr>
                     @endforeach
-                    
+
                   </tbody>
                 </table>
-              </div>            
+              </div>
 @endsection

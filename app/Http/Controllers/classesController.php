@@ -14,12 +14,12 @@ class classesController extends Controller
     //
     public function index()
     {
-        //  
+        //
         $user = Auth::user();
 
         $classes = Classes::all();
 
-        return view('conteudos.classes.app_classe', compact('user', 'classes'));
+        return view('conteudos.classes.app_classes', compact('user', 'classes'));
 
     }
 
@@ -42,11 +42,15 @@ class classesController extends Controller
         $classe->nome = $request->nome;
         $classe->data_inicio = $request->data_inicio;
         $classe->nivel = $request->nivel;
-        $classe->endereco = $request->endereco;
+        $classe->cep = $request->cep;
+        $classe->numero = $request->numero;
+        $classe->complemento = $request->complemento;
+        $classe->site = $request->site;
+        $classe->whatsapp = $request->whatsapp;
         $classe->save();
 
         // redirecionar para a página inicial
-        Alert::toast('classe Registado Com Sucesso', 'success');
+        Alert::toast('Classe Criada Com Sucesso', 'success');
 
         return redirect('/classes');
     }
